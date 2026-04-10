@@ -1,0 +1,455 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Pens Shop Listing - Barwon Craft Works</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script>
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        primary: "#203c35",
+                        secondary: "#d4af37", // Gold accent for luxury feel
+                        "background-light": "#F8F5F0", // User requested light bg
+                        "background-dark": "#131615",
+                        "surface-light": "#ffffff",
+                        "surface-dark": "#1e2321",
+                        "text-primary-light": "#131615",
+                        "text-primary-dark": "#f0f2f1",
+                        "text-secondary-light": "#5c6663",
+                        "text-secondary-dark": "#a6b0ad",
+                    },
+                    fontFamily: {
+                        display: ["Inter", "sans-serif"],
+                    },
+                    borderRadius: {
+                        DEFAULT: "0.5rem",
+                        lg: "1rem",
+                        xl: "1.5rem",
+                        full: "9999px",
+                    },
+                },
+            },
+        }
+    </script>
+<style>
+        /* Custom scrollbar for webkit */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: transparent;
+        }
+        ::-webkit-scrollbar-thumb {
+            background-color: rgba(32, 60, 53, 0.2);
+            border-radius: 4px;
+        }
+        .dark ::-webkit-scrollbar-thumb {
+            background-color: rgba(255, 255, 255, 0.2);
+        }
+    </style>
+</head>
+<body class="bg-background-light dark:bg-background-dark text-text-primary-light dark:text-text-primary-dark font-display antialiased transition-colors duration-200">
+<div class="relative flex min-h-screen w-full flex-col overflow-x-hidden">
+<!-- Header -->
+<header class="sticky top-0 z-50 flex items-center justify-between whitespace-nowrap border-b border-solid border-gray-200 dark:border-[#2e3332] bg-background-light/95 dark:bg-[#131615]/95 backdrop-blur-md px-6 lg:px-10 py-4 shadow-sm">
+<div class="flex items-center gap-8">
+<div class="flex items-center gap-4 text-primary dark:text-white">
+<div class="size-8">
+<svg class="w-full h-full" fill="none" viewbox="0 0 48 48" xmlns="http://www.w3.org/2000/svg">
+<path clip-rule="evenodd" d="M24 18.4228L42 11.475V34.3663C42 34.7796 41.7457 35.1504 41.3601 35.2992L24 42V18.4228Z" fill="currentColor" fill-rule="evenodd"></path>
+<path clip-rule="evenodd" d="M24 8.18819L33.4123 11.574L24 15.2071L14.5877 11.574L24 8.18819ZM9 15.8487L21 20.4805V37.6263L9 32.9945V15.8487ZM27 37.6263V20.4805L39 15.8487V32.9945L27 37.6263ZM25.354 2.29885C24.4788 1.98402 23.5212 1.98402 22.646 2.29885L4.98454 8.65208C3.7939 9.08038 3 10.2097 3 11.475V34.3663C3 36.0196 4.01719 37.5026 5.55962 38.098L22.9197 44.7987C23.6149 45.0671 24.3851 45.0671 25.0803 44.7987L42.4404 38.098C43.9828 37.5026 45 36.0196 45 34.3663V11.475C45 10.2097 44.2061 9.08038 43.0155 8.65208L25.354 2.29885Z" fill="currentColor" fill-rule="evenodd"></path>
+</svg>
+</div>
+<h2 class="text-primary dark:text-white text-xl font-bold leading-tight tracking-tight">Barwon Craft Works</h2>
+</div>
+<nav class="hidden lg:flex items-center gap-9">
+<a class="text-text-secondary-light dark:text-text-secondary-dark hover:text-primary dark:hover:text-white text-sm font-medium transition-colors" href="#">Shop Pens</a>
+<a class="text-text-secondary-light dark:text-text-secondary-dark hover:text-primary dark:hover:text-white text-sm font-medium transition-colors" href="#">3D Printing</a>
+<a class="text-text-secondary-light dark:text-text-secondary-dark hover:text-primary dark:hover:text-white text-sm font-medium transition-colors" href="#">About</a>
+<a class="text-text-secondary-light dark:text-text-secondary-dark hover:text-primary dark:hover:text-white text-sm font-medium transition-colors" href="#">Contact</a>
+</nav>
+</div>
+<div class="flex items-center gap-4 lg:gap-8">
+<label class="hidden md:flex flex-col w-64 h-10">
+<div class="flex w-full h-full items-stretch rounded-xl bg-gray-100 dark:bg-[#2e3332] ring-1 ring-transparent focus-within:ring-primary/50 transition-shadow overflow-hidden">
+<div class="text-gray-400 dark:text-[#a6b0ad] flex items-center justify-center pl-4 pr-2">
+<span class="material-symbols-outlined text-[20px]">search</span>
+</div>
+<input class="w-full bg-transparent border-none text-text-primary-light dark:text-white placeholder:text-gray-400 dark:placeholder:text-[#a6b0ad] focus:ring-0 text-sm" placeholder="Search"/>
+</div>
+</label>
+<div class="flex gap-3">
+<button class="flex items-center justify-center size-10 rounded-full bg-gray-100 dark:bg-[#2e3332] text-primary dark:text-white hover:bg-primary hover:text-white dark:hover:bg-primary transition-colors">
+<span class="material-symbols-outlined text-[20px]">shopping_cart</span>
+</button>
+<button class="flex items-center justify-center size-10 rounded-full bg-gray-100 dark:bg-[#2e3332] text-primary dark:text-white hover:bg-primary hover:text-white dark:hover:bg-primary transition-colors">
+<span class="material-symbols-outlined text-[20px]">account_circle</span>
+</button>
+<button class="lg:hidden flex items-center justify-center size-10 rounded-full bg-gray-100 dark:bg-[#2e3332] text-primary dark:text-white">
+<span class="material-symbols-outlined text-[20px]">menu</span>
+</button>
+</div>
+</div>
+</header>
+<!-- Main Content Layout -->
+<main class="flex-grow w-full max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-8 py-8">
+<!-- Breadcrumbs -->
+<div class="flex items-center gap-2 mb-8 text-sm">
+<a class="text-text-secondary-light dark:text-text-secondary-dark hover:text-primary dark:hover:text-white transition-colors" href="#">Home</a>
+<span class="text-text-secondary-light dark:text-text-secondary-dark">/</span>
+<a class="text-text-secondary-light dark:text-text-secondary-dark hover:text-primary dark:hover:text-white transition-colors" href="#">Shop</a>
+<span class="text-text-secondary-light dark:text-text-secondary-dark">/</span>
+<span class="text-primary dark:text-white font-medium">Luxury Pens</span>
+</div>
+<div class="flex flex-col lg:flex-row gap-10">
+<!-- Sidebar Filters -->
+<aside class="w-full lg:w-72 flex-shrink-0 space-y-8">
+<!-- Title Mobile -->
+<div class="lg:hidden mb-4">
+<h1 class="text-3xl font-bold text-primary dark:text-white mb-2">Hand-Turned Pens</h1>
+<p class="text-text-secondary-light dark:text-text-secondary-dark">Refine your search for the perfect instrument.</p>
+</div>
+<!-- Filter Group: Categories -->
+<div class="rounded-2xl bg-surface-light dark:bg-surface-dark p-6 shadow-sm border border-gray-100 dark:border-gray-800">
+<div class="flex items-center justify-between mb-4">
+<h3 class="text-lg font-semibold text-primary dark:text-white">Categories</h3>
+<button class="text-xs font-medium text-text-secondary-light dark:text-text-secondary-dark hover:text-primary dark:hover:text-white uppercase tracking-wider">Clear</button>
+</div>
+<div class="space-y-1">
+<label class="flex items-center gap-3 p-2 rounded-lg bg-primary/10 dark:bg-primary/20 text-primary dark:text-white cursor-pointer transition-colors">
+<span class="material-symbols-outlined text-[20px] filled">edit</span>
+<span class="font-medium text-sm">All Pens</span>
+</label>
+<label class="flex items-center gap-3 p-2 rounded-lg hover:bg-gray-50 dark:hover:bg-white/5 text-text-secondary-light dark:text-text-secondary-dark cursor-pointer transition-colors">
+<span class="material-symbols-outlined text-[20px]">ink_pen</span>
+<span class="font-medium text-sm">Fountain Pens</span>
+</label>
+<label class="flex items-center gap-3 p-2 rounded-lg hover:bg-gray-50 dark:hover:bg-white/5 text-text-secondary-light dark:text-text-secondary-dark cursor-pointer transition-colors">
+<span class="material-symbols-outlined text-[20px]">edit_note</span>
+<span class="font-medium text-sm">Rollerball Pens</span>
+</label>
+<label class="flex items-center gap-3 p-2 rounded-lg hover:bg-gray-50 dark:hover:bg-white/5 text-text-secondary-light dark:text-text-secondary-dark cursor-pointer transition-colors">
+<span class="material-symbols-outlined text-[20px]">draw</span>
+<span class="font-medium text-sm">Ballpoint Pens</span>
+</label>
+</div>
+</div>
+<!-- Filter Group: Price Range -->
+<div class="rounded-2xl bg-surface-light dark:bg-surface-dark p-6 shadow-sm border border-gray-100 dark:border-gray-800">
+<h3 class="text-lg font-semibold text-primary dark:text-white mb-6">Price Range</h3>
+<div class="px-2">
+<div class="relative h-1 bg-gray-200 dark:bg-gray-700 rounded-full mb-6">
+<div class="absolute h-full bg-primary rounded-full left-0 right-[20%]"></div>
+<div class="absolute size-4 bg-white dark:bg-primary border-2 border-primary dark:border-white rounded-full -top-1.5 shadow cursor-pointer left-0 transform -translate-x-1/2"></div>
+<div class="absolute size-4 bg-white dark:bg-primary border-2 border-primary dark:border-white rounded-full -top-1.5 shadow cursor-pointer right-[20%] transform translate-x-1/2"></div>
+</div>
+<div class="flex items-center justify-between text-sm font-medium text-text-primary-light dark:text-white">
+<span class="bg-gray-100 dark:bg-[#2e3332] px-3 py-1 rounded-md">$0</span>
+<span class="text-gray-400">-</span>
+<span class="bg-gray-100 dark:bg-[#2e3332] px-3 py-1 rounded-md">$160</span>
+</div>
+</div>
+</div>
+<!-- Filter Group: Wood Species -->
+<div class="rounded-2xl bg-surface-light dark:bg-surface-dark p-6 shadow-sm border border-gray-100 dark:border-gray-800">
+<h3 class="text-lg font-semibold text-primary dark:text-white mb-4">Wood Species</h3>
+<div class="space-y-3">
+<label class="flex items-center gap-3 cursor-pointer group">
+<div class="relative flex items-center justify-center size-5 rounded border border-gray-300 dark:border-gray-600 bg-white dark:bg-[#2e3332] group-hover:border-primary dark:group-hover:border-white transition-colors">
+<input checked="" class="peer appearance-none absolute inset-0 w-full h-full cursor-pointer z-10" type="checkbox"/>
+<span class="material-symbols-outlined text-[16px] text-primary dark:text-white opacity-0 peer-checked:opacity-100">check</span>
+</div>
+<span class="text-sm text-text-secondary-light dark:text-text-secondary-dark group-hover:text-primary dark:group-hover:text-white font-display italic">Tasmanian Blackwood</span>
+</label>
+<label class="flex items-center gap-3 cursor-pointer group">
+<div class="relative flex items-center justify-center size-5 rounded border border-gray-300 dark:border-gray-600 bg-white dark:bg-[#2e3332] group-hover:border-primary dark:group-hover:border-white transition-colors">
+<input class="peer appearance-none absolute inset-0 w-full h-full cursor-pointer z-10" type="checkbox"/>
+<span class="material-symbols-outlined text-[16px] text-primary dark:text-white opacity-0 peer-checked:opacity-100">check</span>
+</div>
+<span class="text-sm text-text-secondary-light dark:text-text-secondary-dark group-hover:text-primary dark:group-hover:text-white font-display italic">Huon Pine</span>
+</label>
+<label class="flex items-center gap-3 cursor-pointer group">
+<div class="relative flex items-center justify-center size-5 rounded border border-gray-300 dark:border-gray-600 bg-white dark:bg-[#2e3332] group-hover:border-primary dark:group-hover:border-white transition-colors">
+<input class="peer appearance-none absolute inset-0 w-full h-full cursor-pointer z-10" type="checkbox"/>
+<span class="material-symbols-outlined text-[16px] text-primary dark:text-white opacity-0 peer-checked:opacity-100">check</span>
+</div>
+<span class="text-sm text-text-secondary-light dark:text-text-secondary-dark group-hover:text-primary dark:group-hover:text-white font-display italic">Jarrah Burl</span>
+</label>
+<label class="flex items-center gap-3 cursor-pointer group">
+<div class="relative flex items-center justify-center size-5 rounded border border-gray-300 dark:border-gray-600 bg-white dark:bg-[#2e3332] group-hover:border-primary dark:group-hover:border-white transition-colors">
+<input class="peer appearance-none absolute inset-0 w-full h-full cursor-pointer z-10" type="checkbox"/>
+<span class="material-symbols-outlined text-[16px] text-primary dark:text-white opacity-0 peer-checked:opacity-100">check</span>
+</div>
+<span class="text-sm text-text-secondary-light dark:text-text-secondary-dark group-hover:text-primary dark:group-hover:text-white font-display italic">Olive Wood</span>
+</label>
+</div>
+</div>
+</aside>
+<!-- Product Grid Section -->
+<div class="flex-1">
+<!-- Header -->
+<div class="hidden lg:flex flex-col gap-2 mb-8">
+<h1 class="text-4xl font-bold text-primary dark:text-white tracking-tight">Hand-Turned Luxury Pens</h1>
+<p class="text-text-secondary-light dark:text-text-secondary-dark max-w-2xl">Discover our collection of bespoke writing instruments, each hand-crafted from exotic Australian woods and finished with premium hardware.</p>
+</div>
+<!-- Sorting Toolbar -->
+<div class="flex flex-wrap items-center justify-between gap-4 mb-6">
+<p class="text-sm font-medium text-text-secondary-light dark:text-text-secondary-dark">Showing 24 results</p>
+<div class="flex items-center gap-3">
+<span class="text-sm text-text-secondary-light dark:text-text-secondary-dark">Sort by:</span>
+<select class="bg-surface-light dark:bg-surface-dark border-none text-sm font-medium text-primary dark:text-white focus:ring-0 cursor-pointer pr-8 pl-0 py-0">
+<option>Featured</option>
+<option>Price: Low to High</option>
+<option>Price: High to Low</option>
+<option>Newest Arrivals</option>
+</select>
+</div>
+</div>
+<!-- Grid -->
+<div class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-6">
+<!-- Product Card 1 -->
+<div class="group relative flex flex-col bg-surface-light dark:bg-surface-dark rounded-xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 border-t-2 border-secondary">
+<div class="relative aspect-[4/5] overflow-hidden bg-gray-100 dark:bg-gray-800">
+<img alt="Close up of luxury wooden fountain pen on a desk" class="h-full w-full object-cover object-center transition-transform duration-500 group-hover:scale-105" data-alt="Close up of luxury wooden fountain pen on a desk" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCCs4HAMse3qmwJfmy49V2wkU-dQSuqWGk7oEwS4Ltlwe6Gs2xZ2KFBsiD-IuHa1ooyf4ZBN0UUrq5nwzbDH6jWij8E3g72Y-x5kFa9HW6PUsVei-qXO0v5Pi0PfpWzHTshVqPzVkLP2Kkp5GzaCtw7Mv8iJePOpMQVGLDaqO8Y7cEELgbmeCYYSdA8Kfijq78gAtE3hGdmrWgYmTdjDECViMU0nZdtQqznun1afC6bijHLqmpBXBcnnBdRcnW7jgeoXPZKtUYOUQxG"/>
+<div class="absolute top-3 right-3">
+<button class="flex h-8 w-8 items-center justify-center rounded-full bg-white/90 dark:bg-black/50 text-gray-900 dark:text-white opacity-0 transition-opacity group-hover:opacity-100 hover:bg-primary hover:text-white dark:hover:bg-primary">
+<span class="material-symbols-outlined text-[18px]">favorite</span>
+</button>
+</div>
+<div class="absolute bottom-0 left-0 right-0 p-4 translate-y-full transition-transform duration-300 group-hover:translate-y-0">
+<button class="w-full rounded-lg bg-primary py-3 text-sm font-bold text-white shadow-lg hover:bg-primary/90">
+                                        Add to Cart
+                                    </button>
+</div>
+</div>
+<div class="flex flex-col p-5 gap-1">
+<p class="text-xs font-medium text-secondary italic font-display">Tasmanian Blackwood</p>
+<h3 class="text-lg font-bold text-primary dark:text-white truncate">Classic Fountain Pen</h3>
+<div class="flex items-center gap-2 mt-1">
+<span class="text-lg font-semibold text-primary dark:text-white">$145.00</span>
+</div>
+</div>
+</div>
+<!-- Product Card 2 -->
+<div class="group relative flex flex-col bg-surface-light dark:bg-surface-dark rounded-xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 border-t-2 border-secondary">
+<div class="relative aspect-[4/5] overflow-hidden bg-gray-100 dark:bg-gray-800">
+<img alt="Elegant rollerball pen on leather notebook" class="h-full w-full object-cover object-center transition-transform duration-500 group-hover:scale-105" data-alt="Elegant rollerball pen on leather notebook" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAMQIaOMexmY9dHL4CbCvbGXKSOPvrapGvGdJbOKgsRDclLSyeoR6yZEtdc1LoWqrJydffCfmugCYQtWpoj4s6k96KwJYwzUOi5QJuzSZU2d0_gPjd6_RtWYIB-s6nqqZXfeRdc_Cm0KlCmiL6a2INMaYAKz1aRws2ylAqq7G_G0oxgTBt8Q_f6xjfY0EVNf28nLMr3ZYdS4mM74wNV3kik1l9-beLRtnRdxpChnYQS64RN5jRXv7Ox08BhjJNdxMYW6znEv9kBhgxO"/>
+<div class="absolute top-3 left-3">
+<span class="bg-secondary text-white text-[10px] font-bold px-2 py-1 rounded-full uppercase tracking-wide">New</span>
+</div>
+<div class="absolute top-3 right-3">
+<button class="flex h-8 w-8 items-center justify-center rounded-full bg-white/90 dark:bg-black/50 text-gray-900 dark:text-white opacity-0 transition-opacity group-hover:opacity-100 hover:bg-primary hover:text-white dark:hover:bg-primary">
+<span class="material-symbols-outlined text-[18px]">favorite</span>
+</button>
+</div>
+<div class="absolute bottom-0 left-0 right-0 p-4 translate-y-full transition-transform duration-300 group-hover:translate-y-0">
+<button class="w-full rounded-lg bg-primary py-3 text-sm font-bold text-white shadow-lg hover:bg-primary/90">
+                                        Add to Cart
+                                    </button>
+</div>
+</div>
+<div class="flex flex-col p-5 gap-1">
+<p class="text-xs font-medium text-secondary italic font-display">Huon Pine</p>
+<h3 class="text-lg font-bold text-primary dark:text-white truncate">Executive Rollerball</h3>
+<div class="flex items-center gap-2 mt-1">
+<span class="text-lg font-semibold text-primary dark:text-white">$189.00</span>
+</div>
+</div>
+</div>
+<!-- Product Card 3 -->
+<div class="group relative flex flex-col bg-surface-light dark:bg-surface-dark rounded-xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 border-t-2 border-secondary">
+<div class="relative aspect-[4/5] overflow-hidden bg-gray-100 dark:bg-gray-800">
+<img alt="Minimalist wooden pen on white surface" class="h-full w-full object-cover object-center transition-transform duration-500 group-hover:scale-105" data-alt="Minimalist wooden pen on white surface" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDdpuVMRc0pnqin5PjGmHEzt4qI_u8GzmuIO96DXldv9H5w8_Dy8OjxBHQCbjftwqIrrwSKLVIbx7LXNVsx__5TfGEz1YnOdMNwDgyEnFPmO9oFL4ZFgLO8Vjue093qRH07RjbFUIYCvWUTaD8OUU-622Pc-pGjEVIWeVF5GZYfyPphroaNAnzJdqeTW60OnYLJ-Qr5AYHr5sWN7DqrpUlNl13ZuRmqM8Ft0oRynx34KytFnAcy-sZZWcv6CfM7RHhmlVENIUq9iPsS"/>
+<div class="absolute top-3 right-3">
+<button class="flex h-8 w-8 items-center justify-center rounded-full bg-white/90 dark:bg-black/50 text-gray-900 dark:text-white opacity-0 transition-opacity group-hover:opacity-100 hover:bg-primary hover:text-white dark:hover:bg-primary">
+<span class="material-symbols-outlined text-[18px]">favorite</span>
+</button>
+</div>
+<div class="absolute bottom-0 left-0 right-0 p-4 translate-y-full transition-transform duration-300 group-hover:translate-y-0">
+<button class="w-full rounded-lg bg-primary py-3 text-sm font-bold text-white shadow-lg hover:bg-primary/90">
+                                        Add to Cart
+                                    </button>
+</div>
+</div>
+<div class="flex flex-col p-5 gap-1">
+<p class="text-xs font-medium text-secondary italic font-display">Jarrah Burl</p>
+<h3 class="text-lg font-bold text-primary dark:text-white truncate">Slimline Ballpoint</h3>
+<div class="flex items-center gap-2 mt-1">
+<span class="text-lg font-semibold text-primary dark:text-white">$85.00</span>
+</div>
+</div>
+</div>
+<!-- Product Card 4 -->
+<div class="group relative flex flex-col bg-surface-light dark:bg-surface-dark rounded-xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 border-t-2 border-secondary">
+<div class="relative aspect-[4/5] overflow-hidden bg-gray-100 dark:bg-gray-800">
+<img alt="Multiple luxury pens in a display box" class="h-full w-full object-cover object-center transition-transform duration-500 group-hover:scale-105" data-alt="Multiple luxury pens in a display box" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAAG80tbNOr0ZleQkSVsX4O19vaPbyoF0dhsVnE4u_L3JJ_gxVS-eJNMGj4JxhFe_GLWQ84a5QXX59q6ZfghbzyJc-txjX5flUjMhQmfJ7qgSJbt3uXDvMgS8fD27oYQkUhyut-Ss9R5RxKWLpOyzOR338T5QPCz9hdKqVd_8_2fKysV2VK1gBmyYaat4G2aZTNagIV7Bdzmuu_RrhvG9_D3LXInbgSGMB3gMhsAPOQduUQtGg7EFk6PnInfZnsauiRiIgmNK6tvElu"/>
+<div class="absolute top-3 right-3">
+<button class="flex h-8 w-8 items-center justify-center rounded-full bg-white/90 dark:bg-black/50 text-gray-900 dark:text-white opacity-0 transition-opacity group-hover:opacity-100 hover:bg-primary hover:text-white dark:hover:bg-primary">
+<span class="material-symbols-outlined text-[18px]">favorite</span>
+</button>
+</div>
+<div class="absolute bottom-0 left-0 right-0 p-4 translate-y-full transition-transform duration-300 group-hover:translate-y-0">
+<button class="w-full rounded-lg bg-primary py-3 text-sm font-bold text-white shadow-lg hover:bg-primary/90">
+                                        Add to Cart
+                                    </button>
+</div>
+</div>
+<div class="flex flex-col p-5 gap-1">
+<p class="text-xs font-medium text-secondary italic font-display">Olive Wood</p>
+<h3 class="text-lg font-bold text-primary dark:text-white truncate">Navigator Rollerball</h3>
+<div class="flex items-center gap-2 mt-1">
+<span class="text-lg font-semibold text-primary dark:text-white">$155.00</span>
+<span class="text-sm text-text-secondary-light line-through">$180.00</span>
+</div>
+</div>
+</div>
+<!-- Product Card 5 -->
+<div class="group relative flex flex-col bg-surface-light dark:bg-surface-dark rounded-xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 border-t-2 border-secondary">
+<div class="relative aspect-[4/5] overflow-hidden bg-gray-100 dark:bg-gray-800">
+<img alt="Detailed shot of a wooden pen nib" class="h-full w-full object-cover object-center transition-transform duration-500 group-hover:scale-105" data-alt="Detailed shot of a wooden pen nib" src="https://lh3.googleusercontent.com/aida-public/AB6AXuD8hmOleUToxBveJ7Q66xU-HUrvHr2Luk3YJ9PYLombV0X3hUGDCiaxlPBs-UxkmvZ0tbnp2btXTNLrDB8LAY-jmx3MAlzy-H2RQfy_Q-ACxgpyz83woz5JFeeQ00ob_wN-jyHux5ogUBaFDErLZcMnEvzwa2fvo29WqtPSgXYC0W7uQI6YAvheCV1jYzXjkGIn1OTD6LIYMl6c-ZheJQIE731Novr9bazkoSNXkMITKXUPH8RT2WC6yHZJXLoUzMqacflrHtFEYZYO"/>
+<div class="absolute top-3 right-3">
+<button class="flex h-8 w-8 items-center justify-center rounded-full bg-white/90 dark:bg-black/50 text-gray-900 dark:text-white opacity-0 transition-opacity group-hover:opacity-100 hover:bg-primary hover:text-white dark:hover:bg-primary">
+<span class="material-symbols-outlined text-[18px]">favorite</span>
+</button>
+</div>
+<div class="absolute bottom-0 left-0 right-0 p-4 translate-y-full transition-transform duration-300 group-hover:translate-y-0">
+<button class="w-full rounded-lg bg-primary py-3 text-sm font-bold text-white shadow-lg hover:bg-primary/90">
+                                        Add to Cart
+                                    </button>
+</div>
+</div>
+<div class="flex flex-col p-5 gap-1">
+<p class="text-xs font-medium text-secondary italic font-display">Red Mallee Burl</p>
+<h3 class="text-lg font-bold text-primary dark:text-white truncate">Baron Fountain Pen</h3>
+<div class="flex items-center gap-2 mt-1">
+<span class="text-lg font-semibold text-primary dark:text-white">$195.00</span>
+</div>
+</div>
+</div>
+<!-- Product Card 6 -->
+<div class="group relative flex flex-col bg-surface-light dark:bg-surface-dark rounded-xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 border-t-2 border-secondary">
+<div class="relative aspect-[4/5] overflow-hidden bg-gray-100 dark:bg-gray-800">
+<img alt="Pen resting on architectural drawings" class="h-full w-full object-cover object-center transition-transform duration-500 group-hover:scale-105" data-alt="Pen resting on architectural drawings" src="https://lh3.googleusercontent.com/aida-public/AB6AXuC0M55ni4uwr2fghcptXbwcoXw-FRZL0KKu0GfsDJsyei7_MT6mzizkct37LqddCddsW8vVywiP8vzWZnvjtoXW6_kdeuVYcIsPuLRHHcwQCWNt_rWuKHzi1oiE3X8wuBG3AXA11rbtVZe8WyX5O7lCy9V2S9pUtR_4Bq-x8ewBMPyPbTeF7rT9vZU1aB5YzVNDy_wSGv5bvA3mCAXmVafoju9x8F2ApnVlEHWSdeDKMs5nqpiyjh7bXH768MMIsLAaMcvh46YTyBnP"/>
+<div class="absolute top-3 right-3">
+<button class="flex h-8 w-8 items-center justify-center rounded-full bg-white/90 dark:bg-black/50 text-gray-900 dark:text-white opacity-0 transition-opacity group-hover:opacity-100 hover:bg-primary hover:text-white dark:hover:bg-primary">
+<span class="material-symbols-outlined text-[18px]">favorite</span>
+</button>
+</div>
+<div class="absolute bottom-0 left-0 right-0 p-4 translate-y-full transition-transform duration-300 group-hover:translate-y-0">
+<button class="w-full rounded-lg bg-primary py-3 text-sm font-bold text-white shadow-lg hover:bg-primary/90">
+                                        Add to Cart
+                                    </button>
+</div>
+</div>
+<div class="flex flex-col p-5 gap-1">
+<p class="text-xs font-medium text-secondary italic font-display">Purpleheart</p>
+<h3 class="text-lg font-bold text-primary dark:text-white truncate">Bolt Action Pen</h3>
+<div class="flex items-center gap-2 mt-1">
+<span class="text-lg font-semibold text-primary dark:text-white">$95.00</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Pagination -->
+<div class="flex items-center justify-center mt-12 gap-2">
+<button class="flex items-center justify-center size-10 rounded-lg border border-gray-200 dark:border-gray-700 text-text-secondary-light dark:text-text-secondary-dark hover:bg-gray-100 dark:hover:bg-white/5 transition-colors">
+<span class="material-symbols-outlined text-[20px]">chevron_left</span>
+</button>
+<button class="flex items-center justify-center size-10 rounded-lg bg-primary text-white font-medium">1</button>
+<button class="flex items-center justify-center size-10 rounded-lg border border-transparent text-text-secondary-light dark:text-text-secondary-dark hover:bg-gray-100 dark:hover:bg-white/5 font-medium transition-colors">2</button>
+<button class="flex items-center justify-center size-10 rounded-lg border border-transparent text-text-secondary-light dark:text-text-secondary-dark hover:bg-gray-100 dark:hover:bg-white/5 font-medium transition-colors">3</button>
+<span class="px-2 text-text-secondary-light dark:text-text-secondary-dark">...</span>
+<button class="flex items-center justify-center size-10 rounded-lg border border-transparent text-text-secondary-light dark:text-text-secondary-dark hover:bg-gray-100 dark:hover:bg-white/5 font-medium transition-colors">8</button>
+<button class="flex items-center justify-center size-10 rounded-lg border border-gray-200 dark:border-gray-700 text-text-secondary-light dark:text-text-secondary-dark hover:bg-gray-100 dark:hover:bg-white/5 transition-colors">
+<span class="material-symbols-outlined text-[20px]">chevron_right</span>
+</button>
+</div>
+</div>
+</div>
+</main>
+<!-- Footer -->
+<footer class="mt-20 border-t border-gray-200 dark:border-[#2e3332] bg-surface-light dark:bg-[#131615]">
+<div class="mx-auto max-w-[1440px] px-6 py-12 lg:px-8 lg:py-16">
+<div class="xl:grid xl:grid-cols-3 xl:gap-8">
+<div class="space-y-8">
+<div class="flex items-center gap-2 text-primary dark:text-white">
+<div class="size-6">
+<svg class="w-full h-full" fill="none" viewbox="0 0 48 48" xmlns="http://www.w3.org/2000/svg">
+<path clip-rule="evenodd" d="M24 18.4228L42 11.475V34.3663C42 34.7796 41.7457 35.1504 41.3601 35.2992L24 42V18.4228Z" fill="currentColor" fill-rule="evenodd"></path>
+<path clip-rule="evenodd" d="M24 8.18819L33.4123 11.574L24 15.2071L14.5877 11.574L24 8.18819ZM9 15.8487L21 20.4805V37.6263L9 32.9945V15.8487ZM27 37.6263V20.4805L39 15.8487V32.9945L27 37.6263ZM25.354 2.29885C24.4788 1.98402 23.5212 1.98402 22.646 2.29885L4.98454 8.65208C3.7939 9.08038 3 10.2097 3 11.475V34.3663C3 36.0196 4.01719 37.5026 5.55962 38.098L22.9197 44.7987C23.6149 45.0671 24.3851 45.0671 25.0803 44.7987L42.4404 38.098C43.9828 37.5026 45 36.0196 45 34.3663V11.475C45 10.2097 44.2061 9.08038 43.0155 8.65208L25.354 2.29885Z" fill="currentColor" fill-rule="evenodd"></path>
+</svg>
+</div>
+<span class="text-lg font-bold">Barwon Craft Works</span>
+</div>
+<p class="text-sm leading-6 text-text-secondary-light dark:text-text-secondary-dark">
+                            Crafting legacy, one turn at a time. Luxury writing instruments and precision 3D printing services.
+                        </p>
+<div class="flex space-x-6">
+<a class="text-gray-400 hover:text-primary dark:hover:text-white" href="#">
+<span class="sr-only">Facebook</span>
+<svg aria-hidden="true" class="h-6 w-6" fill="currentColor" viewbox="0 0 24 24">
+<path clip-rule="evenodd" d="M22 12c0-5.523-4.477-10-10-10S2 6.477 2 12c0 4.991 3.657 9.128 8.438 9.878v-6.987h-2.54V12h2.54V9.797c0-2.506 1.492-3.89 3.777-3.89 1.094 0 2.238.195 2.238.195v2.46h-1.26c-1.243 0-1.63.771-1.63 1.562V12h2.773l-.443 2.89h-2.33v6.988C18.343 21.128 22 16.991 22 12z" fill-rule="evenodd"></path>
+</svg>
+</a>
+<a class="text-gray-400 hover:text-primary dark:hover:text-white" href="#">
+<span class="sr-only">Instagram</span>
+<svg aria-hidden="true" class="h-6 w-6" fill="currentColor" viewbox="0 0 24 24">
+<path clip-rule="evenodd" d="M12.315 2c2.43 0 2.784.013 3.808.06 1.064.049 1.791.218 2.427.465a4.902 4.902 0 011.772 1.153 4.902 4.902 0 011.153 1.772c.247.636.416 1.363.465 2.427.048 1.067.06 1.407.06 4.123v.08c0 2.643-.012 2.987-.06 4.043-.049 1.064-.218 1.791-.465 2.427a4.902 4.902 0 01-1.153 1.772 4.902 4.902 0 01-1.772 1.153c-.636.247-1.363.416-2.427.465-1.067.048-1.407.06-4.123.06h-.08c-2.643 0-2.987-.012-4.043-.06-1.064-.049-1.791-.218-2.427-.465a4.902 4.902 0 01-1.772-1.153 4.902 4.902 0 01-1.153-1.772c-.247-.636-.416-1.363-.465-2.427-.047-1.024-.06-1.379-.06-3.808v-.63c0-2.43.013-2.784.06-3.808.049-1.064.218-1.791.465-2.427a4.902 4.902 0 011.153-1.772 4.902 4.902 0 011.772-1.153c.636-.247 1.363-.416 2.427-.465C9.673 2.013 10.03 2 12.315 2zm-3.196 8.45a3.696 3.696 0 100 7.392 3.696 3.696 0 000-7.392zm0-2.3a6 6 0 110 12 6 6 0 010-12zm6.593-1.57a1.44 1.44 0 100 2.879 1.44 1.44 0 000-2.88z" fill-rule="evenodd"></path>
+</svg>
+</a>
+</div>
+</div>
+<div class="mt-16 grid grid-cols-2 gap-8 xl:col-span-2 xl:mt-0">
+<div class="md:grid md:grid-cols-2 md:gap-8">
+<div>
+<h3 class="text-sm font-semibold leading-6 text-primary dark:text-white">Shop</h3>
+<ul class="mt-6 space-y-4" role="list">
+<li><a class="text-sm leading-6 text-text-secondary-light dark:text-text-secondary-dark hover:text-primary dark:hover:text-white" href="#">All Pens</a></li>
+<li><a class="text-sm leading-6 text-text-secondary-light dark:text-text-secondary-dark hover:text-primary dark:hover:text-white" href="#">Fountain Pens</a></li>
+<li><a class="text-sm leading-6 text-text-secondary-light dark:text-text-secondary-dark hover:text-primary dark:hover:text-white" href="#">Ballpoint Pens</a></li>
+<li><a class="text-sm leading-6 text-text-secondary-light dark:text-text-secondary-dark hover:text-primary dark:hover:text-white" href="#">Accessories</a></li>
+</ul>
+</div>
+<div class="mt-10 md:mt-0">
+<h3 class="text-sm font-semibold leading-6 text-primary dark:text-white">Support</h3>
+<ul class="mt-6 space-y-4" role="list">
+<li><a class="text-sm leading-6 text-text-secondary-light dark:text-text-secondary-dark hover:text-primary dark:hover:text-white" href="#">Contact Us</a></li>
+<li><a class="text-sm leading-6 text-text-secondary-light dark:text-text-secondary-dark hover:text-primary dark:hover:text-white" href="#">Shipping Policy</a></li>
+<li><a class="text-sm leading-6 text-text-secondary-light dark:text-text-secondary-dark hover:text-primary dark:hover:text-white" href="#">Returns</a></li>
+<li><a class="text-sm leading-6 text-text-secondary-light dark:text-text-secondary-dark hover:text-primary dark:hover:text-white" href="#">FAQ</a></li>
+</ul>
+</div>
+</div>
+<div class="md:grid md:grid-cols-2 md:gap-8">
+<div>
+<h3 class="text-sm font-semibold leading-6 text-primary dark:text-white">Services</h3>
+<ul class="mt-6 space-y-4" role="list">
+<li><a class="text-sm leading-6 text-text-secondary-light dark:text-text-secondary-dark hover:text-primary dark:hover:text-white" href="#">Custom Orders</a></li>
+<li><a class="text-sm leading-6 text-text-secondary-light dark:text-text-secondary-dark hover:text-primary dark:hover:text-white" href="#">3D Printing</a></li>
+<li><a class="text-sm leading-6 text-text-secondary-light dark:text-text-secondary-dark hover:text-primary dark:hover:text-white" href="#">Laser Engraving</a></li>
+</ul>
+</div>
+<div class="mt-10 md:mt-0">
+<h3 class="text-sm font-semibold leading-6 text-primary dark:text-white">Legal</h3>
+<ul class="mt-6 space-y-4" role="list">
+<li><a class="text-sm leading-6 text-text-secondary-light dark:text-text-secondary-dark hover:text-primary dark:hover:text-white" href="#">Privacy</a></li>
+<li><a class="text-sm leading-6 text-text-secondary-light dark:text-text-secondary-dark hover:text-primary dark:hover:text-white" href="#">Terms</a></li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+<div class="mt-16 border-t border-gray-200 dark:border-[#2e3332] pt-8 sm:mt-20 lg:mt-24">
+<p class="text-xs leading-5 text-text-secondary-light dark:text-text-secondary-dark">© 2024 Barwon Craft Works. All rights reserved.</p>
+</div>
+</div>
+</footer>
+</div>
+</body></html>

@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Barwon Craft Works - Luxury Artisan Pens &amp; 3D Printing</title>
+<!-- Fonts -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;600;700&amp;family=Inter:wght@400;500;700&amp;display=swap" rel="stylesheet"/>
+<!-- Material Symbols -->
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Tailwind CSS -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<!-- Theme Config -->
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#203c35",
+                        "accent-gold": "#d4af37",
+                        "accent-gold-light": "#f3e5ab",
+                        "background-light": "#f6f7f7",
+                        "background-dark": "#161c1b",
+                        "surface-dark": "#1f2524",
+                    },
+                    fontFamily: {
+                        "display": ["Inter", "sans-serif"],
+                        "serif": ["Cormorant Garamond", "serif"],
+                    },
+                    borderRadius: {"DEFAULT": "0.5rem", "lg": "1rem", "xl": "1.5rem", "full": "9999px"},
+                },
+            },
+        }
+    </script>
+<style>
+        .gold-gradient-text {
+            background: linear-gradient(to right, #d4af37, #f3e5ab, #d4af37);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+        }
+        .wood-texture {
+            background-image: repeating-linear-gradient(45deg, rgba(255,255,255,0.03) 0px, rgba(255,255,255,0.03) 1px, transparent 1px, transparent 12px),
+            repeating-linear-gradient(135deg, rgba(255,255,255,0.03) 0px, rgba(255,255,255,0.03) 1px, transparent 1px, transparent 16px);
+        }
+    </style>
+</head>
+<body class="bg-background-light dark:bg-background-dark text-slate-900 dark:text-slate-100 font-display min-h-screen flex flex-col overflow-x-hidden">
+<!-- Navbar -->
+<header class="sticky top-0 z-50 w-full bg-[#131615]/95 backdrop-blur-sm border-b border-[#2e3332]">
+<div class="max-w-[1280px] mx-auto px-4 lg:px-10 h-[72px] flex items-center justify-between">
+<div class="flex items-center gap-8">
+<!-- Logo -->
+<div class="flex items-center gap-3">
+<div class="size-8 text-accent-gold">
+<svg class="w-full h-full" fill="none" viewbox="0 0 48 48" xmlns="http://www.w3.org/2000/svg">
+<path clip-rule="evenodd" d="M24 18.4228L42 11.475V34.3663C42 34.7796 41.7457 35.1504 41.3601 35.2992L24 42V18.4228Z" fill="currentColor" fill-rule="evenodd"></path>
+<path clip-rule="evenodd" d="M24 8.18819L33.4123 11.574L24 15.2071L14.5877 11.574L24 8.18819ZM9 15.8487L21 20.4805V37.6263L9 32.9945V15.8487ZM27 37.6263V20.4805L39 15.8487V32.9945L27 37.6263ZM25.354 2.29885C24.4788 1.98402 23.5212 1.98402 22.646 2.29885L4.98454 8.65208C3.7939 9.08038 3 10.2097 3 11.475V34.3663C3 36.0196 4.01719 37.5026 5.55962 38.098L22.9197 44.7987C23.6149 45.0671 24.3851 45.0671 25.0803 44.7987L42.4404 38.098C43.9828 37.5026 45 36.0196 45 34.3663V11.475C45 10.2097 44.2061 9.08038 43.0155 8.65208L25.354 2.29885Z" fill="currentColor" fill-rule="evenodd"></path>
+</svg>
+</div>
+<h1 class="text-accent-gold font-serif text-2xl font-bold tracking-wide">Barwon Craft Works</h1>
+</div>
+<!-- Desktop Nav Links -->
+<nav class="hidden lg:flex items-center gap-8">
+<a class="text-slate-300 hover:text-accent-gold transition-colors text-sm font-medium tracking-wide" href="#">Shop Pens</a>
+<a class="text-slate-300 hover:text-accent-gold transition-colors text-sm font-medium tracking-wide" href="#">3D Printing</a>
+<a class="text-slate-300 hover:text-accent-gold transition-colors text-sm font-medium tracking-wide" href="#">About</a>
+<a class="text-slate-300 hover:text-accent-gold transition-colors text-sm font-medium tracking-wide" href="#">Contact</a>
+</nav>
+</div>
+<!-- Actions -->
+<div class="flex items-center gap-4">
+<label class="hidden md:flex relative group w-48 lg:w-64">
+<span class="absolute inset-y-0 left-0 flex items-center pl-3 text-slate-400 group-focus-within:text-accent-gold transition-colors">
+<span class="material-symbols-outlined text-[20px]">search</span>
+</span>
+<input class="w-full bg-[#2e3332] text-slate-100 text-sm rounded-lg pl-10 pr-4 py-2 border-none focus:ring-1 focus:ring-accent-gold placeholder-slate-500 transition-all" placeholder="Search collection..." type="text"/>
+</label>
+<button class="text-slate-300 hover:text-accent-gold transition-colors relative">
+<span class="material-symbols-outlined">shopping_bag</span>
+<span class="absolute -top-1 -right-1 flex h-4 w-4 items-center justify-center rounded-full bg-accent-gold text-[10px] font-bold text-black">2</span>
+</button>
+<button class="text-slate-300 hover:text-accent-gold transition-colors hidden md:block">
+<span class="material-symbols-outlined">account_circle</span>
+</button>
+</div>
+</div>
+</header>
+<!-- Hero Section -->
+<section class="relative min-h-[600px] flex items-center justify-center overflow-hidden">
+<!-- Background Image with Overlay -->
+<div class="absolute inset-0 z-0">
+<div class="absolute inset-0 bg-gradient-to-t from-[#161c1b] via-[#161c1b]/60 to-transparent z-10"></div>
+<div class="w-full h-full bg-cover bg-center wood-texture" data-alt="Close-up dark wood grain texture with elegant lighting" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuChHwVN2FAe9ukypLEGVppK4giWLXKXMrGGmof6SgGo0d-f6mHP-mLLalN5XfF12FTM6s9h_2tRZ03U1QILslSsHiL60O56YylxeHHYi8TwBvfUfaVe08uftCI94kPdF0K9ykH7AKunn_yaDfbYfWtjjScz3GwTCcHtf8ZlcmYNWQ9hxCUCU8i9zU53ukjHfQV24ZT8K4l_R2eTTsR9ErbpzcyNLKYOFJZUIdJmHv0rMzSYTi3RLbC216qShf-GM_zVN-hK7IQFQjOb');"></div>
+</div>
+<!-- Content -->
+<div class="relative z-20 max-w-[960px] mx-auto px-6 text-center flex flex-col items-center gap-8">
+<span class="inline-block py-1 px-3 border border-accent-gold/30 rounded-full bg-[#000]/40 backdrop-blur-sm text-accent-gold text-xs font-semibold uppercase tracking-widest mb-2">
+                Artisan Craftsmanship
+            </span>
+<h1 class="font-serif text-5xl md:text-7xl font-bold leading-tight text-white drop-shadow-xl">
+                Hand-turned pens and <br/>
+<span class="gold-gradient-text italic">custom 3D printing</span> <br/>
+                from Geelong
+            </h1>
+<p class="text-lg md:text-xl text-slate-300 max-w-2xl font-light">
+                Experience the tactile beauty of locally sourced timber combined with modern precision engineering.
+            </p>
+<div class="flex flex-col sm:flex-row gap-4 mt-4">
+<button class="bg-primary hover:bg-[#2a4d44] text-white px-8 py-3 rounded-lg text-sm font-bold tracking-wide transition-all shadow-[0_0_15px_rgba(32,60,53,0.5)] border border-accent-gold/20 flex items-center gap-2">
+                    View Collection
+                    <span class="material-symbols-outlined text-sm">arrow_forward</span>
+</button>
+<button class="bg-transparent hover:bg-white/5 text-white px-8 py-3 rounded-lg text-sm font-bold tracking-wide border border-white/20 transition-all flex items-center gap-2">
+                    Custom Orders
+                </button>
+</div>
+</div>
+</section>
+<!-- Decorative Divider -->
+<div class="h-[80px] w-full flex items-center justify-center bg-background-dark overflow-hidden relative">
+<div class="absolute w-full h-[1px] bg-gradient-to-r from-transparent via-accent-gold/40 to-transparent"></div>
+<div class="size-3 rotate-45 border border-accent-gold bg-background-dark z-10"></div>
+</div>
+<!-- Featured Pens Section -->
+<main class="flex-grow w-full max-w-[1280px] mx-auto px-4 lg:px-10 pb-20">
+<div class="flex items-center justify-between mb-12">
+<div>
+<h2 class="font-serif text-3xl md:text-4xl text-slate-100 font-semibold mb-2">Featured Masterpieces</h2>
+<p class="text-slate-400 font-light">Curated selection of our finest writing instruments</p>
+</div>
+<a class="hidden md:flex items-center gap-1 text-accent-gold hover:text-accent-gold-light text-sm font-medium transition-colors" href="#">
+                View All Pens <span class="material-symbols-outlined text-sm">arrow_right_alt</span>
+</a>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+<!-- Card 1 -->
+<article class="group relative bg-surface-dark rounded-xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 border-t-2 border-accent-gold">
+<div class="relative aspect-[4/3] overflow-hidden">
+<div class="absolute top-4 left-4 z-10 bg-accent-gold/90 text-background-dark text-xs font-bold px-3 py-1 rounded-full uppercase tracking-wider">Best Seller</div>
+<div class="w-full h-full bg-cover bg-center group-hover:scale-105 transition-transform duration-700" data-alt="Elegant wooden fountain pen on dark surface" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuCJtz6lUv0nmf-jzoyKiGHH89fow2AJRHOmYymfgJxTnO1hED9ikebHfWxM6t--a5KQ6tqHk8KSURtlg4SPqCTnfjzhoB-P5UwhbriRShFWxw35SNzeZSYRZwsepwKsnaGtjhgpyX2Y0fJ6DgtthZkdgKqqaiEPeFv9KJ804Ol4237YwHv12YXcA-DNXZnYpSMpa112JsSz1jELLIbW8Yq62qI3izeC37ac4uGl042YKCX6oMzbSbJbqRAWO-8XyjftGG_MoaKYYmlg');"></div>
+<div class="absolute inset-0 bg-gradient-to-t from-surface-dark via-transparent to-transparent opacity-60"></div>
+</div>
+<div class="p-6 relative">
+<h3 class="font-serif text-2xl text-slate-100 font-semibold mb-1 group-hover:text-accent-gold transition-colors">Barwon Classic</h3>
+<p class="text-slate-400 text-sm mb-4">Hand-turned Australian Jarrah with gold fittings</p>
+<div class="flex items-center justify-between mt-4 border-t border-slate-700/50 pt-4">
+<span class="text-xl font-bold text-slate-100">$185.00</span>
+<button class="p-2 rounded-full bg-slate-800 text-accent-gold hover:bg-primary hover:text-white transition-colors">
+<span class="material-symbols-outlined text-[20px]">add_shopping_cart</span>
+</button>
+</div>
+</div>
+</article>
+<!-- Card 2 -->
+<article class="group relative bg-surface-dark rounded-xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 border-t-2 border-accent-gold/50 hover:border-accent-gold">
+<div class="relative aspect-[4/3] overflow-hidden">
+<div class="w-full h-full bg-cover bg-center group-hover:scale-105 transition-transform duration-700" data-alt="Sleek modern pen with metallic finish" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuBWer2IZ4pG-dgZSZ6TuB93nTg7pK6U3QsOCwNzKWGXcIHEeku90tQAJe07KzIdAMs6KndRg-Yjr4a1Ogf-3ueWNcugpmu3fnUD5cYeH3VvF6HXB_YDz7u7ClN1QMf5t6bdagbkFuFR_ColI5l3LwACdt_UkSx466ZhsNoeE6hsAcWl9GgBNa2awNOCINrERS1C3Meh2FiYbPCnygnbf_4JASZRERo-r70CbmIKkE82iYpEL_HU356NgjN6vvaoigruFvVALBWV-wQP');"></div>
+<div class="absolute inset-0 bg-gradient-to-t from-surface-dark via-transparent to-transparent opacity-60"></div>
+</div>
+<div class="p-6 relative">
+<h3 class="font-serif text-2xl text-slate-100 font-semibold mb-1 group-hover:text-accent-gold transition-colors">Executive Rollerball</h3>
+<p class="text-slate-400 text-sm mb-4">Stabilized burl wood with rhodium accents</p>
+<div class="flex items-center justify-between mt-4 border-t border-slate-700/50 pt-4">
+<span class="text-xl font-bold text-slate-100">$210.00</span>
+<button class="p-2 rounded-full bg-slate-800 text-accent-gold hover:bg-primary hover:text-white transition-colors">
+<span class="material-symbols-outlined text-[20px]">add_shopping_cart</span>
+</button>
+</div>
+</div>
+</article>
+<!-- Card 3 -->
+<article class="group relative bg-surface-dark rounded-xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 border-t-2 border-accent-gold/50 hover:border-accent-gold">
+<div class="relative aspect-[4/3] overflow-hidden">
+<div class="absolute top-4 left-4 z-10 bg-primary/90 text-white text-xs font-bold px-3 py-1 rounded-full uppercase tracking-wider">New Arrival</div>
+<div class="w-full h-full bg-cover bg-center group-hover:scale-105 transition-transform duration-700" data-alt="Minimalist desk setup with luxury pen" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuA-K-_EMqVKRAHO49XwSDrkzvMJC91UrM9WGkBrwG0jR2JtN-mgPdgiCVKsvXHAYELrLRxwfDTFEQjxYLsSG6WOA72gkNPKKAWmsfDTDQMcWf3ahpBjUH22nOlCZxcqR2KIobR9L3S9ZTAylRWE1JIuDidHdVnOhjhVomDefC8EjSPpPHPmJTdVHm8D1YLtBQGfsZjhhcmqpeN9VNWoVEcuuAFoT_seciEgrs8PDyzavHL9PAKlw2QWteI97O5zpvQvVUgEzlpxOhig');"></div>
+<div class="absolute inset-0 bg-gradient-to-t from-surface-dark via-transparent to-transparent opacity-60"></div>
+</div>
+<div class="p-6 relative">
+<h3 class="font-serif text-2xl text-slate-100 font-semibold mb-1 group-hover:text-accent-gold transition-colors">Midnight Writer</h3>
+<p class="text-slate-400 text-sm mb-4">Ebony wood with gunmetal plating</p>
+<div class="flex items-center justify-between mt-4 border-t border-slate-700/50 pt-4">
+<span class="text-xl font-bold text-slate-100">$165.00</span>
+<button class="p-2 rounded-full bg-slate-800 text-accent-gold hover:bg-primary hover:text-white transition-colors">
+<span class="material-symbols-outlined text-[20px]">add_shopping_cart</span>
+</button>
+</div>
+</div>
+</article>
+</div>
+<div class="mt-8 text-center md:hidden">
+<a class="inline-flex items-center gap-2 text-accent-gold hover:text-accent-gold-light text-sm font-medium transition-colors border border-accent-gold/30 px-6 py-3 rounded-lg" href="#">
+                View All Pens <span class="material-symbols-outlined text-sm">arrow_right_alt</span>
+</a>
+</div>
+</main>
+<!-- 3D Printing Teaser -->
+<section class="bg-surface-dark py-20 relative overflow-hidden">
+<div class="absolute top-0 w-full h-[1px] bg-gradient-to-r from-transparent via-accent-gold/20 to-transparent"></div>
+<div class="max-w-[1280px] mx-auto px-4 lg:px-10">
+<div class="flex flex-col lg:flex-row items-center gap-12 lg:gap-20">
+<div class="flex-1 space-y-6">
+<span class="text-accent-gold font-bold tracking-widest text-xs uppercase">Modern Innovation</span>
+<h2 class="font-serif text-4xl lg:text-5xl font-bold text-white leading-tight">Precision 3D Printing Services</h2>
+<p class="text-slate-400 text-lg leading-relaxed">From rapid prototyping to custom geometric vases, we bring digital designs into the physical world with exquisite detail and premium materials.</p>
+<ul class="space-y-4 pt-4">
+<li class="flex items-center gap-3 text-slate-300">
+<span class="material-symbols-outlined text-accent-gold">check_circle</span>
+<span>High-resolution SLA resin printing</span>
+</li>
+<li class="flex items-center gap-3 text-slate-300">
+<span class="material-symbols-outlined text-accent-gold">check_circle</span>
+<span>Custom design consultation</span>
+</li>
+<li class="flex items-center gap-3 text-slate-300">
+<span class="material-symbols-outlined text-accent-gold">check_circle</span>
+<span>Eco-friendly PLA filament options</span>
+</li>
+</ul>
+<div class="pt-6">
+<button class="bg-transparent hover:bg-slate-800 text-accent-gold hover:text-white border border-accent-gold/50 px-8 py-3 rounded-lg text-sm font-bold tracking-wide transition-all">
+                            Explore 3D Services
+                        </button>
+</div>
+</div>
+<div class="flex-1 w-full relative">
+<div class="aspect-square w-full max-w-[500px] mx-auto relative rounded-2xl overflow-hidden border border-slate-700 shadow-2xl">
+<div class="w-full h-full bg-cover bg-center" data-alt="3D printer nozzle creating a complex geometric shape" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuDp2ZcT56u8safQD_5bZj7QbqdVk5JBYmCHVNnRlFiDBlwsIA7VzzWReJq0W_igSCL0FswLBzEDFkKcs1pCMrh6TAPAhlUU5rsRA9adgL-TiKqXvMjb5hHPb0OxFT5rdPowZoUlpxEp0km0ia232z5lj-xrgIBsR00zKf4QL2bjt2a8wRA6eiHH4LE4_2dOEtp7Ib12MjF0IVbJBC_UOzkTuVXRhzZGlPgKx0_7rHdnC6JybdWl52gDzLPX6Rzf1BpVXGFAjzLxl5re');"></div>
+<div class="absolute bottom-0 left-0 w-full p-6 bg-gradient-to-t from-black/90 to-transparent">
+<div class="flex gap-4">
+<div class="bg-black/40 backdrop-blur-md p-3 rounded-lg border border-white/10">
+<p class="text-accent-gold text-xs font-bold uppercase">Layer Height</p>
+<p class="text-white text-lg font-mono">0.05mm</p>
+</div>
+<div class="bg-black/40 backdrop-blur-md p-3 rounded-lg border border-white/10">
+<p class="text-accent-gold text-xs font-bold uppercase">Material</p>
+<p class="text-white text-lg font-mono">Resin</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Footer -->
+<footer class="bg-[#131615] relative pt-16 pb-8 border-t-4 border-accent-gold">
+<div class="max-w-[1280px] mx-auto px-4 lg:px-10">
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-16">
+<!-- Brand -->
+<div class="space-y-6">
+<div class="flex items-center gap-2">
+<div class="size-6 text-accent-gold">
+<svg class="w-full h-full" fill="none" viewbox="0 0 48 48" xmlns="http://www.w3.org/2000/svg">
+<path clip-rule="evenodd" d="M24 18.4228L42 11.475V34.3663C42 34.7796 41.7457 35.1504 41.3601 35.2992L24 42V18.4228Z" fill="currentColor" fill-rule="evenodd"></path>
+<path clip-rule="evenodd" d="M24 8.18819L33.4123 11.574L24 15.2071L14.5877 11.574L24 8.18819ZM9 15.8487L21 20.4805V37.6263L9 32.9945V15.8487ZM27 37.6263V20.4805L39 15.8487V32.9945L27 37.6263ZM25.354 2.29885C24.4788 1.98402 23.5212 1.98402 22.646 2.29885L4.98454 8.65208C3.7939 9.08038 3 10.2097 3 11.475V34.3663C3 36.0196 4.01719 37.5026 5.55962 38.098L22.9197 44.7987C23.6149 45.0671 24.3851 45.0671 25.0803 44.7987L42.4404 38.098C43.9828 37.5026 45 36.0196 45 34.3663V11.475C45 10.2097 44.2061 9.08038 43.0155 8.65208L25.354 2.29885Z" fill="currentColor" fill-rule="evenodd"></path>
+</svg>
+</div>
+<h2 class="text-white text-xl font-serif font-bold">Barwon Craft Works</h2>
+</div>
+<p class="text-slate-400 text-sm leading-relaxed">
+                        Hand-crafted elegance from the heart of Geelong. Combining traditional woodturning with modern 3D technology.
+                    </p>
+<div class="flex gap-4">
+<a class="text-slate-400 hover:text-accent-gold transition-colors" href="#"><span class="material-symbols-outlined">social_leaderboard</span></a>
+<a class="text-slate-400 hover:text-accent-gold transition-colors" href="#"><span class="material-symbols-outlined">photo_camera</span></a>
+<a class="text-slate-400 hover:text-accent-gold transition-colors" href="#"><span class="material-symbols-outlined">mail</span></a>
+</div>
+</div>
+<!-- Links 1 -->
+<div>
+<h3 class="text-white font-bold mb-6 tracking-wide text-sm uppercase">Shop</h3>
+<ul class="space-y-3 text-sm text-slate-400">
+<li><a class="hover:text-accent-gold transition-colors" href="#">Fountain Pens</a></li>
+<li><a class="hover:text-accent-gold transition-colors" href="#">Rollerball Pens</a></li>
+<li><a class="hover:text-accent-gold transition-colors" href="#">3D Printed Vases</a></li>
+<li><a class="hover:text-accent-gold transition-colors" href="#">Desk Accessories</a></li>
+<li><a class="hover:text-accent-gold transition-colors" href="#">Gift Cards</a></li>
+</ul>
+</div>
+<!-- Links 2 -->
+<div>
+<h3 class="text-white font-bold mb-6 tracking-wide text-sm uppercase">Support</h3>
+<ul class="space-y-3 text-sm text-slate-400">
+<li><a class="hover:text-accent-gold transition-colors" href="#">Contact Us</a></li>
+<li><a class="hover:text-accent-gold transition-colors" href="#">Shipping &amp; Returns</a></li>
+<li><a class="hover:text-accent-gold transition-colors" href="#">Care Instructions</a></li>
+<li><a class="hover:text-accent-gold transition-colors" href="#">Privacy Policy</a></li>
+<li><a class="hover:text-accent-gold transition-colors" href="#">Terms of Service</a></li>
+</ul>
+</div>
+<!-- Newsletter -->
+<div>
+<h3 class="text-white font-bold mb-6 tracking-wide text-sm uppercase">Newsletter</h3>
+<p class="text-slate-400 text-sm mb-4">Subscribe for new product drops and exclusive artisan insights.</p>
+<form class="flex flex-col gap-3">
+<input class="bg-[#2e3332] border border-slate-700 text-white text-sm rounded-lg px-4 py-2 focus:ring-1 focus:ring-accent-gold focus:border-accent-gold outline-none" placeholder="Email address" type="email"/>
+<button class="bg-primary hover:bg-[#2a4d44] text-white text-sm font-bold py-2 px-4 rounded-lg transition-colors border border-accent-gold/20" type="submit">Subscribe</button>
+</form>
+</div>
+</div>
+<div class="border-t border-slate-800 pt-8 flex flex-col md:flex-row justify-between items-center gap-4 text-xs text-slate-500">
+<p>© 2024 Barwon Craft Works. All rights reserved.</p>
+<div class="flex items-center gap-6">
+<span>Geelong, Victoria</span>
+<span class="size-1 rounded-full bg-slate-700"></span>
+<span>ABN 12 345 678 901</span>
+</div>
+</div>
+</div>
+</footer>
+</body></html>

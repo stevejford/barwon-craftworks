@@ -1,0 +1,369 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Barwon Craft Works - Custom Pen Builder</title>
+<!-- Fonts -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;900&amp;display=swap" rel="stylesheet"/>
+<!-- Material Symbols -->
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Tailwind CSS -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#203c35",
+                        "primary-foreground": "#ffffff",
+                        "accent": "#d4af37", // Adding a gold/brass accent for the "Gold" requirement
+                        "background-light": "#f6f7f7",
+                        "background-dark": "#161c1b",
+                        "surface-dark": "#1e2423",
+                        "surface-border": "#2e3332",
+                    },
+                    fontFamily: {
+                        "display": ["Inter", "sans-serif"]
+                    },
+                    borderRadius: {"DEFAULT": "0.5rem", "lg": "1rem", "xl": "1.5rem", "full": "9999px"},
+                },
+            },
+        }
+    </script>
+</head>
+<body class="bg-background-light dark:bg-background-dark text-slate-900 dark:text-slate-100 font-display min-h-screen flex flex-col overflow-x-hidden">
+<!-- Header / TopNavBar -->
+<header class="sticky top-0 z-50 flex items-center justify-between whitespace-nowrap border-b border-solid border-surface-border bg-background-dark/95 backdrop-blur px-6 py-4 lg:px-10">
+<div class="flex items-center gap-4 text-white">
+<div class="size-8 text-accent">
+<svg class="w-full h-full" fill="none" viewbox="0 0 48 48" xmlns="http://www.w3.org/2000/svg">
+<path clip-rule="evenodd" d="M24 18.4228L42 11.475V34.3663C42 34.7796 41.7457 35.1504 41.3601 35.2992L24 42V18.4228Z" fill="currentColor" fill-rule="evenodd"></path>
+<path clip-rule="evenodd" d="M24 8.18819L33.4123 11.574L24 15.2071L14.5877 11.574L24 8.18819ZM9 15.8487L21 20.4805V37.6263L9 32.9945V15.8487ZM27 37.6263V20.4805L39 15.8487V32.9945L27 37.6263ZM25.354 2.29885C24.4788 1.98402 23.5212 1.98402 22.646 2.29885L4.98454 8.65208C3.7939 9.08038 3 10.2097 3 11.475V34.3663C3 36.0196 4.01719 37.5026 5.55962 38.098L22.9197 44.7987C23.6149 45.0671 24.3851 45.0671 25.0803 44.7987L42.4404 38.098C43.9828 37.5026 45 36.0196 45 34.3663V11.475C45 10.2097 44.2061 9.08038 43.0155 8.65208L25.354 2.29885Z" fill="currentColor" fill-rule="evenodd"></path>
+</svg>
+</div>
+<h2 class="text-white text-xl font-bold leading-tight tracking-tight">Barwon Craft Works</h2>
+</div>
+<div class="hidden md:flex flex-1 justify-end gap-8">
+<nav class="flex items-center gap-9">
+<a class="text-slate-300 hover:text-white transition-colors text-sm font-medium" href="#">Home</a>
+<a class="text-slate-300 hover:text-white transition-colors text-sm font-medium" href="#">Shop</a>
+<a class="text-white text-sm font-medium border-b-2 border-primary pb-0.5" href="#">Custom Builder</a>
+<a class="text-slate-300 hover:text-white transition-colors text-sm font-medium" href="#">About</a>
+</nav>
+<div class="flex gap-3">
+<button class="flex items-center justify-center rounded-lg size-10 bg-surface-dark hover:bg-surface-border text-white transition-colors">
+<span class="material-symbols-outlined">search</span>
+</button>
+<button class="flex items-center justify-center rounded-lg h-10 px-5 bg-primary hover:bg-primary/90 text-white text-sm font-bold gap-2 transition-colors">
+<span class="material-symbols-outlined text-[20px]">shopping_bag</span>
+<span>Cart (0)</span>
+</button>
+</div>
+</div>
+<button class="md:hidden text-white">
+<span class="material-symbols-outlined">menu</span>
+</button>
+</header>
+<!-- Main Content: Split Layout -->
+<main class="flex-grow flex flex-col lg:flex-row h-[calc(100vh-80px)] overflow-hidden">
+<!-- Left Column: Configurator (Scrollable) -->
+<div class="w-full lg:w-[480px] xl:w-[560px] flex flex-col border-r border-surface-border bg-background-dark overflow-y-auto custom-scrollbar">
+<div class="p-8 pb-32 space-y-10">
+<!-- Intro -->
+<div class="space-y-2">
+<div class="flex items-center gap-2 text-primary">
+<span class="material-symbols-outlined text-sm">edit_note</span>
+<span class="text-xs font-bold uppercase tracking-wider">Configurator</span>
+</div>
+<h1 class="text-3xl font-black text-white leading-tight">Craft Your Legacy</h1>
+<p class="text-slate-400 text-sm leading-relaxed">Select from our rare Australian timbers and premium hardware to create a writing instrument that is uniquely yours.</p>
+</div>
+<!-- Step 1: Style -->
+<section class="space-y-4">
+<div class="flex items-center justify-between">
+<h3 class="text-white text-lg font-bold flex items-center gap-3">
+<span class="flex items-center justify-center size-6 rounded-full bg-primary text-xs text-white">1</span>
+                            Pen Style
+                        </h3>
+<span class="text-xs text-slate-500 uppercase font-medium">Required</span>
+</div>
+<div class="grid grid-cols-1 gap-3">
+<label class="group relative flex cursor-pointer rounded-xl border border-surface-border bg-surface-dark p-4 hover:border-slate-600 transition-all has-[:checked]:border-primary has-[:checked]:ring-1 has-[:checked]:ring-primary">
+<input checked="" class="peer sr-only" name="style" type="radio"/>
+<div class="flex flex-1 items-center gap-4">
+<div class="size-12 rounded-lg bg-surface-border overflow-hidden relative">
+<div class="absolute inset-0 bg-gradient-to-tr from-slate-800 to-slate-700" data-alt="Icon representation of a fountain pen nib"></div>
+<span class="material-symbols-outlined absolute inset-0 m-auto text-slate-400 w-fit h-fit">ink_pen</span>
+</div>
+<div>
+<div class="font-bold text-slate-200 group-hover:text-white">Classic Fountain</div>
+<div class="text-xs text-slate-400 mt-1">Refillable, gold-plated nib included.</div>
+</div>
+</div>
+<div class="hidden peer-checked:block text-primary">
+<span class="material-symbols-outlined">check_circle</span>
+</div>
+</label>
+<label class="group relative flex cursor-pointer rounded-xl border border-surface-border bg-surface-dark p-4 hover:border-slate-600 transition-all has-[:checked]:border-primary has-[:checked]:ring-1 has-[:checked]:ring-primary">
+<input class="peer sr-only" name="style" type="radio"/>
+<div class="flex flex-1 items-center gap-4">
+<div class="size-12 rounded-lg bg-surface-border overflow-hidden relative">
+<div class="absolute inset-0 bg-gradient-to-tr from-slate-800 to-slate-700" data-alt="Icon representation of a rollerball pen tip"></div>
+<span class="material-symbols-outlined absolute inset-0 m-auto text-slate-400 w-fit h-fit">edit</span>
+</div>
+<div>
+<div class="font-bold text-slate-200 group-hover:text-white">Modern Rollerball</div>
+<div class="text-xs text-slate-400 mt-1">Smooth ceramic tip, gel ink cartridge.</div>
+</div>
+</div>
+<div class="hidden peer-checked:block text-primary">
+<span class="material-symbols-outlined">check_circle</span>
+</div>
+</label>
+</div>
+</section>
+<!-- Step 2: Wood Selection -->
+<section class="space-y-4">
+<div class="flex items-center justify-between">
+<h3 class="text-white text-lg font-bold flex items-center gap-3">
+<span class="flex items-center justify-center size-6 rounded-full bg-surface-border text-xs text-slate-400">2</span>
+                            Select Timber
+                        </h3>
+<button class="text-xs text-primary hover:underline">View Gallery</button>
+</div>
+<div class="grid grid-cols-2 gap-3">
+<!-- Jarrah -->
+<label class="cursor-pointer group">
+<input checked="" class="peer sr-only" name="wood" type="radio"/>
+<div class="relative overflow-hidden rounded-xl aspect-[4/3] border-2 border-transparent peer-checked:border-primary transition-all">
+<div class="absolute inset-0 bg-[#5c2a2a] opacity-80 z-0"></div> <!-- Fallback color -->
+<img alt="Dark red Jarrah wood texture swatch" class="absolute inset-0 h-full w-full object-cover z-10 opacity-70 group-hover:scale-110 transition-transform duration-500" data-alt="Close up of rich dark red Jarrah timber grain" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAXrRzX2_goyFhAI_-lnQuKBWQ-U0ISXXYxSMq-s35MMZgyrgVBF5UMJKM00oRXot2fDG5-w4qKI9e_wqtaCFO1iSTms8QAsz50OeXL_haBxu_91nb1w8RfG1oMhtV7YoKTABJPfbH9jExsz-MyWaYdqWx-1_WMPAuq0dgOIQ15eMidW5VtkIL_B6CeZ60TiGVKkLLEbrP12g_Fu5OSDVCp2GixDCf_DQV7rsZZhhraCQs4zQNiDhtIaB2OnmDKzR9UzwGpY0aVAar7"/>
+<div class="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent z-20"></div>
+<div class="absolute bottom-3 left-3 z-30">
+<div class="text-white font-bold text-sm">WA Jarrah</div>
+<div class="text-xs text-slate-300">Deep reds, durable</div>
+</div>
+<div class="absolute top-2 right-2 z-30 bg-primary text-white rounded-full p-0.5 hidden peer-checked:block shadow-lg">
+<span class="material-symbols-outlined text-sm block">check</span>
+</div>
+</div>
+</label>
+<!-- Huon Pine -->
+<label class="cursor-pointer group">
+<input class="peer sr-only" name="wood" type="radio"/>
+<div class="relative overflow-hidden rounded-xl aspect-[4/3] border-2 border-transparent peer-checked:border-primary transition-all">
+<div class="absolute inset-0 bg-[#e3cca8] opacity-80 z-0"></div> <!-- Fallback color -->
+<img alt="Yellow Huon Pine wood texture swatch" class="absolute inset-0 h-full w-full object-cover z-10 opacity-70 group-hover:scale-110 transition-transform duration-500" data-alt="Close up of golden Huon Pine timber grain" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDxuK04xn6muk0veK-78QsfuhxDuZzdhSoL20jH2k4yXVBgFJOtrHCZ7pT8Xliv-KsjH_8Pnc0fBGeQ9OKK3IAfp-SgMTSlz0_HPvRsPQrz2CXgCVqtniyCbyA47uSTKNlYZQRAD3f5fgqzm9JhYC9NAKgPyg0CBQ6sdHepmFd3rknQkGs1vO-ooTlEI7mo16aBMFEzEaJIf8GwfsH_rbPV32I3NRkUQ8GqhhE0KErBptktNFT7sDY2NWizc5jhJXmhyuY10u5U8QkP"/>
+<div class="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent z-20"></div>
+<div class="absolute bottom-3 left-3 z-30">
+<div class="text-white font-bold text-sm">Huon Pine</div>
+<div class="text-xs text-slate-300">Golden oil, aromatic</div>
+</div>
+<div class="absolute top-2 right-2 z-30 bg-primary text-white rounded-full p-0.5 hidden peer-checked:block shadow-lg">
+<span class="material-symbols-outlined text-sm block">check</span>
+</div>
+</div>
+</label>
+<!-- Blackwood -->
+<label class="cursor-pointer group">
+<input class="peer sr-only" name="wood" type="radio"/>
+<div class="relative overflow-hidden rounded-xl aspect-[4/3] border-2 border-transparent peer-checked:border-primary transition-all">
+<div class="absolute inset-0 bg-[#3e2723] opacity-80 z-0"></div>
+<img alt="Tasmanian Blackwood texture swatch" class="absolute inset-0 h-full w-full object-cover z-10 opacity-70 group-hover:scale-110 transition-transform duration-500" data-alt="Close up of dark brown Tasmanian Blackwood grain" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDOyb7zmEp5d1ayuzftw_A91lGF3K1jYdZNMfbnSkedkbpjOtmy9CeWe46slkmSsUnIn34Jz-ZPoml_jsP9kTWV5sIPeDH7iUUL4DPeHzbsGhf76hQ1sEj_ZrArcVYjTkQWi39Kx23tfXhdKS-XJEN6jhmxLFvPQMJ5FdXX42i2Riin-1Lae1IsRdYrBl8u2JPtlV5V23uG0cSuuXDN7p9q1HauHZbsSQePIfqOE4YZv_HyLWueRI9xWQlXnD7xVHbdrNzHEbJtKrOM"/>
+<div class="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent z-20"></div>
+<div class="absolute bottom-3 left-3 z-30">
+<div class="text-white font-bold text-sm">Tas Blackwood</div>
+<div class="text-xs text-slate-300">Rich streaks, classic</div>
+</div>
+<div class="absolute top-2 right-2 z-30 bg-primary text-white rounded-full p-0.5 hidden peer-checked:block shadow-lg">
+<span class="material-symbols-outlined text-sm block">check</span>
+</div>
+</div>
+</label>
+<!-- Olive -->
+<label class="cursor-pointer group">
+<input class="peer sr-only" name="wood" type="radio"/>
+<div class="relative overflow-hidden rounded-xl aspect-[4/3] border-2 border-transparent peer-checked:border-primary transition-all">
+<div class="absolute inset-0 bg-[#8d6e63] opacity-80 z-0"></div>
+<img alt="Wild Olive wood texture swatch" class="absolute inset-0 h-full w-full object-cover z-10 opacity-70 group-hover:scale-110 transition-transform duration-500" data-alt="Close up of marbled Wild Olive timber grain" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDxUOuoVBseq4OU01Z5X5jXOvtovTu6Ea1PVK6ptdjXTzbNKrWVDDe3WAjL3G2PYQxkE1mtnypM86cHC836eSiWBvDD56YMLadT_ULLWLHcd1tsfQwk1peZomNCtt39N1jBAOIbneWMgVYSVPub8YO9pV991G7G5kexe5Y10cxfl2rHM2RNXMpyStYZYtt-SWPMrAm8_p2nZ0ZkUpKqhUNuPboT0UwxtqhetdpzAvS7r2FUwy6z33FWREf4Fw6emcXAjYCrmoN4S9-G"/>
+<div class="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent z-20"></div>
+<div class="absolute bottom-3 left-3 z-30">
+<div class="text-white font-bold text-sm">Wild Olive</div>
+<div class="text-xs text-slate-300">Marbled grain</div>
+</div>
+<div class="absolute top-2 right-2 z-30 bg-primary text-white rounded-full p-0.5 hidden peer-checked:block shadow-lg">
+<span class="material-symbols-outlined text-sm block">check</span>
+</div>
+</div>
+</label>
+</div>
+</section>
+<!-- Step 3: Hardware Finish -->
+<section class="space-y-4">
+<div class="flex items-center justify-between">
+<h3 class="text-white text-lg font-bold flex items-center gap-3">
+<span class="flex items-center justify-center size-6 rounded-full bg-surface-border text-xs text-slate-400">3</span>
+                            Hardware Finish
+                        </h3>
+</div>
+<div class="flex gap-4">
+<label class="cursor-pointer text-center group">
+<input checked="" class="peer sr-only" name="hardware" type="radio"/>
+<div class="size-16 rounded-full bg-gradient-to-br from-[#ffd700] to-[#b8860b] ring-offset-4 ring-offset-background-dark ring-2 ring-transparent peer-checked:ring-primary transition-all shadow-inner mb-2 mx-auto"></div>
+<span class="text-sm font-medium text-slate-400 group-hover:text-white peer-checked:text-white">24k Gold</span>
+</label>
+<label class="cursor-pointer text-center group">
+<input class="peer sr-only" name="hardware" type="radio"/>
+<div class="size-16 rounded-full bg-gradient-to-br from-[#e0e0e0] to-[#9e9e9e] ring-offset-4 ring-offset-background-dark ring-2 ring-transparent peer-checked:ring-primary transition-all shadow-inner mb-2 mx-auto"></div>
+<span class="text-sm font-medium text-slate-400 group-hover:text-white peer-checked:text-white">Chrome</span>
+</label>
+<label class="cursor-pointer text-center group">
+<input class="peer sr-only" name="hardware" type="radio"/>
+<div class="size-16 rounded-full bg-gradient-to-br from-[#6d4c41] to-[#3e2723] ring-offset-4 ring-offset-background-dark ring-2 ring-transparent peer-checked:ring-primary transition-all shadow-inner mb-2 mx-auto"></div>
+<span class="text-sm font-medium text-slate-400 group-hover:text-white peer-checked:text-white">Antique Copper</span>
+</label>
+<label class="cursor-pointer text-center group">
+<input class="peer sr-only" name="hardware" type="radio"/>
+<div class="size-16 rounded-full bg-gradient-to-br from-[#263238] to-[#000000] ring-offset-4 ring-offset-background-dark ring-2 ring-transparent peer-checked:ring-primary transition-all shadow-inner mb-2 mx-auto"></div>
+<span class="text-sm font-medium text-slate-400 group-hover:text-white peer-checked:text-white">Gunmetal</span>
+</label>
+</div>
+</section>
+<!-- Step 4: Extras -->
+<section class="space-y-4">
+<div class="flex items-center justify-between">
+<h3 class="text-white text-lg font-bold flex items-center gap-3">
+<span class="flex items-center justify-center size-6 rounded-full bg-surface-border text-xs text-slate-400">4</span>
+                            Engraving &amp; Extras
+                        </h3>
+</div>
+<div class="space-y-3">
+<div class="flex items-center justify-between p-4 rounded-xl bg-surface-dark border border-surface-border">
+<div class="flex items-center gap-3">
+<input class="rounded border-slate-600 bg-surface-dark text-primary focus:ring-primary size-5" id="engrave" type="checkbox"/>
+<div>
+<label class="block font-medium text-slate-200" for="engrave">Custom Engraving</label>
+<p class="text-xs text-slate-400">Add initials or a date (+$15.00)</p>
+</div>
+</div>
+<span class="material-symbols-outlined text-slate-500">draw</span>
+</div>
+<div class="flex items-center justify-between p-4 rounded-xl bg-surface-dark border border-surface-border">
+<div class="flex items-center gap-3">
+<input checked="" class="rounded border-slate-600 bg-surface-dark text-primary focus:ring-primary size-5" id="box" type="checkbox"/>
+<div>
+<label class="block font-medium text-slate-200" for="box">Premium Gift Box</label>
+<p class="text-xs text-slate-400">Rosewood display case (+$25.00)</p>
+</div>
+</div>
+<span class="material-symbols-outlined text-slate-500">card_giftcard</span>
+</div>
+</div>
+</section>
+</div>
+<!-- Sticky Footer Action -->
+<div class="sticky bottom-0 mt-auto border-t border-surface-border bg-background-dark p-6 z-40">
+<div class="flex items-center justify-between mb-4">
+<div>
+<span class="text-slate-400 text-sm">Total Price</span>
+<div class="text-2xl font-black text-white">$145.00</div>
+</div>
+<button class="bg-primary hover:bg-primary/90 text-white font-bold py-3 px-8 rounded-xl shadow-lg shadow-primary/20 transition-all transform hover:scale-[1.02] flex items-center gap-2">
+                        Add to Cart
+                        <span class="material-symbols-outlined text-sm">arrow_forward</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Right Column: Visualizer -->
+<div class="flex-1 relative bg-[#0f1211] flex flex-col items-center justify-center p-8 lg:p-16 overflow-hidden">
+<!-- Background Radial Glow -->
+<div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[80%] h-[80%] bg-primary/10 rounded-full blur-[120px] pointer-events-none"></div>
+<!-- Toolbar Overlay -->
+<div class="absolute top-8 right-8 flex flex-col gap-2 z-20">
+<button class="size-10 rounded-lg bg-surface-dark/80 backdrop-blur border border-surface-border text-slate-300 hover:text-white flex items-center justify-center hover:bg-surface-border transition-colors tooltip-trigger" title="Rotate">
+<span class="material-symbols-outlined">3d_rotation</span>
+</button>
+<button class="size-10 rounded-lg bg-surface-dark/80 backdrop-blur border border-surface-border text-slate-300 hover:text-white flex items-center justify-center hover:bg-surface-border transition-colors tooltip-trigger" title="Zoom In">
+<span class="material-symbols-outlined">zoom_in</span>
+</button>
+<button class="size-10 rounded-lg bg-surface-dark/80 backdrop-blur border border-surface-border text-slate-300 hover:text-white flex items-center justify-center hover:bg-surface-border transition-colors tooltip-trigger" title="Reset View">
+<span class="material-symbols-outlined">restart_alt</span>
+</button>
+</div>
+<!-- "Live AI Preview" Badge -->
+<div class="absolute top-8 left-8 z-20">
+<div class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-primary/20 border border-primary/30 backdrop-blur text-primary text-xs font-bold uppercase tracking-wider">
+<span class="relative flex h-2 w-2">
+<span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-primary opacity-75"></span>
+<span class="relative inline-flex rounded-full h-2 w-2 bg-primary"></span>
+</span>
+                    Live Preview
+                </div>
+</div>
+<!-- The Pen Display -->
+<div class="relative w-full max-w-2xl aspect-[16/9] flex items-center justify-center z-10">
+<!-- Pen Shadow -->
+<div class="absolute w-[80%] h-12 bg-black/40 blur-xl rounded-[100%] top-[60%] left-[10%] -rotate-2"></div>
+<!-- The Pen (CSS Composition for simulation) -->
+<!-- We simulate the pen using Tailwind divs to avoid needing external assets, keeping it pure HTML/CSS as requested -->
+<div class="relative w-full h-16 flex items-center justify-center drop-shadow-2xl filter transform -rotate-2 transition-all duration-700 ease-in-out">
+<!-- Cap/Tip Area -->
+<div class="w-12 h-10 bg-gradient-to-r from-[#ffd700] via-[#fceabb] to-[#b8860b] rounded-l-md shadow-lg" style="clip-path: polygon(0 40%, 100% 0, 100% 100%, 0 60%);"></div>
+<!-- Main Body (Wood Texture Simulation) -->
+<!-- Using a gradient to simulate the rounded wood cylinder with lighting -->
+<div class="w-[500px] h-12 relative overflow-hidden bg-[#5c2a2a]">
+<!-- Wood Grain texture overlay -->
+<div class="absolute inset-0 opacity-40 mix-blend-overlay" data-alt="Subtle wood grain texture pattern overlay" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuDk2mcvWs1ku57AFO50qg1QL-LTqwtV9rZMwewWDovmZkpC6-wGAtk70qlnHGcH_YXLZIEydP40OMw6x9GEDrJUuAy7kaGdLNlN61cffJ7ZHBOw2x5VrAGyMHfoegWALPkL9ob0Y7D-2H4QVjSGUlR5jfivU3jXVwvQxU61SE91_J7s7-6zVYnoZEAuoMxwX6QRP85rk12Wg_MBnBWpFl4DzOZqEtB0GBy9lhnAs7sUQl1pJuMnIIDLHGQD4rE7sUYyaIHdS2jt73ue');"></div>
+<!-- Cylinder Lighting Effect (Highlights/Shadows) -->
+<div class="absolute inset-0 bg-gradient-to-b from-black/40 via-white/10 to-black/50"></div>
+<!-- Shine line -->
+<div class="absolute top-[30%] left-0 right-0 h-[2px] bg-white/20 blur-[1px]"></div>
+</div>
+<!-- Center Band -->
+<div class="w-4 h-13 bg-gradient-to-b from-[#b8860b] via-[#ffd700] to-[#b8860b] shadow-lg scale-110 z-10 rounded-sm"></div>
+<!-- Upper Body -->
+<div class="w-[300px] h-12 relative overflow-hidden bg-[#5c2a2a]">
+<!-- Wood Grain -->
+<div class="absolute inset-0 opacity-40 mix-blend-overlay" data-alt="Subtle wood grain texture pattern overlay" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuCQ2rHY3NMnHk6s4K4898PyqdD18i6L99ypfs5B7QLhfeM68El7_OYi03iFegTEtVf9CriR8MX1AtTHrvtCI2lXoAHSKb54YL4czpyZWk8CmOkQPsJvHUACxMfiAS-v4vHcPSZfW-B202DFt1JkMo21j6yLE_xG4Jdm7HX18MswMjUzvPfkn-wxewX5CdzK2m5k-b-24aA-WIEmFfxtQAZcBFle-X6Im__o6cjRW9TlXQM8cXMQRGEiZPx3zzIn_EgUUYsh2FI9jTmX');"></div>
+<!-- Cylinder Lighting -->
+<div class="absolute inset-0 bg-gradient-to-b from-black/40 via-white/10 to-black/50"></div>
+<!-- Shine line -->
+<div class="absolute top-[30%] left-0 right-0 h-[2px] bg-white/20 blur-[1px]"></div>
+<!-- Clip Attachment -->
+<div class="absolute right-10 top-1/2 -translate-y-1/2 w-32 h-2 bg-gradient-to-r from-[#b8860b] via-[#ffd700] to-[#b8860b] rounded-full shadow-md transform -translate-y-[18px] z-20 origin-right rotate-1"></div>
+</div>
+<!-- End Cap -->
+<div class="w-8 h-10 bg-gradient-to-l from-[#b8860b] via-[#fceabb] to-[#ffd700] rounded-r-lg shadow-lg"></div>
+</div>
+</div>
+<!-- Visualization Disclaimer -->
+<div class="absolute bottom-8 text-center px-4">
+<p class="text-slate-500 text-xs max-w-md mx-auto">
+                    *3D rendering is an approximation. Natural timber grain and color will vary, ensuring every Barwon Craft Works piece is truly one-of-a-kind.
+                </p>
+</div>
+</div>
+</main>
+<!-- Inline CSS for Custom Scrollbar -->
+<style>
+        .custom-scrollbar::-webkit-scrollbar {
+            width: 6px;
+        }
+        .custom-scrollbar::-webkit-scrollbar-track {
+            background: #161c1b;
+        }
+        .custom-scrollbar::-webkit-scrollbar-thumb {
+            background-color: #2e3332;
+            border-radius: 20px;
+        }
+        .custom-scrollbar::-webkit-scrollbar-thumb:hover {
+            background-color: #434c4a;
+        }
+    </style>
+</body></html>

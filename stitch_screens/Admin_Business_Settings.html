@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Barwon Craft Works - Admin Settings</title>
+<!-- Fonts -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&amp;family=Playfair+Display:ital,wght@0,400;0,600;1,400&amp;display=swap" rel="stylesheet"/>
+<!-- Material Symbols -->
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Tailwind Config -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#d4af37", // Gold for luxury accent
+                        "primary-hover": "#b5952f",
+                        "background-light": "#f6f8f7",
+                        "background-dark": "#0f1612", // Deep dark green/black
+                        "surface-dark": "#1a2620", // Slightly lighter for cards
+                        "surface-input": "#223028",
+                        "text-main": "#e2e8f0",
+                        "text-muted": "#94a3b8",
+                    },
+                    fontFamily: {
+                        "display": ["Inter", "sans-serif"],
+                        "serif": ["Playfair Display", "serif"],
+                    },
+                    borderRadius: {
+                        "DEFAULT": "0.5rem",
+                        "lg": "0.75rem",
+                        "xl": "1rem",
+                        "2xl": "1.5rem",
+                        "full": "9999px"
+                    },
+                },
+            },
+        }
+    </script>
+<style>
+        /* Custom scrollbar for a cleaner look */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #0f1612; 
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #2f3e35; 
+            border-radius: 4px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #3f5246; 
+        }
+        
+        .toggle-checkbox:checked {
+            right: 0;
+            border-color: #d4af37;
+        }
+        .toggle-checkbox:checked + .toggle-label {
+            background-color: #d4af37;
+        }
+    </style>
+</head>
+<body class="bg-background-light dark:bg-background-dark text-slate-900 dark:text-text-main font-display antialiased selection:bg-primary/30 selection:text-primary">
+<div class="flex h-screen w-full overflow-hidden">
+<!-- Sidebar -->
+<aside class="hidden w-72 flex-col border-r border-white/5 bg-[#111814] lg:flex">
+<div class="flex h-full flex-col justify-between p-6">
+<div class="flex flex-col gap-8">
+<!-- Brand -->
+<div class="flex items-center gap-4">
+<div class="relative flex h-12 w-12 items-center justify-center rounded-full bg-gradient-to-br from-primary/20 to-primary/5 ring-1 ring-white/10" data-alt="Abstract wood grain pattern representing craftsmanship" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuCVPvGV4aV1mRNdhNFVlJC7WupaIoe7c9XXNbj5nFDFhjl17xfuaEegF3RG4_OH0unwZgK7NlChwpgFLnTAizZ1r_BhIfMXVT0WasveTBVMVa9-485vJGM29WCqFw-hbrRPRYRHLONuruVCHpHgVpdzt_uuEoLHnlgJjH3eibtGr5DJZr_YTpiVFq-x44y_PQ4ARL30LC7c7-YbBbHfCEmWHU5HCN7OS2pHpOvvDrWqYvmkpJSFH58ujqReXaE3bPrJ21JMHCNcuN3P"); background-size: cover;'>
+</div>
+<div class="flex flex-col">
+<h1 class="font-serif text-lg font-semibold tracking-wide text-white">Barwon Craft</h1>
+<p class="text-xs font-medium uppercase tracking-wider text-primary">Admin Console</p>
+</div>
+</div>
+<!-- Navigation -->
+<nav class="flex flex-col gap-2">
+<a class="group flex items-center gap-3 rounded-lg px-3 py-2.5 text-slate-400 transition-colors hover:bg-white/5 hover:text-white" href="#">
+<span class="material-symbols-outlined text-[20px]">dashboard</span>
+<span class="text-sm font-medium">Dashboard</span>
+</a>
+<a class="group flex items-center gap-3 rounded-lg px-3 py-2.5 text-slate-400 transition-colors hover:bg-white/5 hover:text-white" href="#">
+<span class="material-symbols-outlined text-[20px]">shopping_bag</span>
+<span class="text-sm font-medium">Orders</span>
+<span class="ml-auto rounded-full bg-primary/20 px-2 py-0.5 text-xs font-semibold text-primary">3</span>
+</a>
+<a class="group flex items-center gap-3 rounded-lg px-3 py-2.5 text-slate-400 transition-colors hover:bg-white/5 hover:text-white" href="#">
+<span class="material-symbols-outlined text-[20px]">inventory_2</span>
+<span class="text-sm font-medium">Products</span>
+</a>
+<a class="group flex items-center gap-3 rounded-lg px-3 py-2.5 text-slate-400 transition-colors hover:bg-white/5 hover:text-white" href="#">
+<span class="material-symbols-outlined text-[20px]">group</span>
+<span class="text-sm font-medium">Customers</span>
+</a>
+<div class="my-2 h-px bg-white/5"></div>
+<a class="group flex items-center gap-3 rounded-lg bg-surface-dark border border-white/5 px-3 py-2.5 text-primary transition-colors" href="#">
+<span class="material-symbols-outlined text-[20px] fill-1">settings</span>
+<span class="text-sm font-medium">Settings</span>
+</a>
+</nav>
+</div>
+<!-- Footer/Logout -->
+<button class="flex items-center gap-3 rounded-lg px-3 py-2.5 text-slate-400 transition-colors hover:bg-red-500/10 hover:text-red-400">
+<span class="material-symbols-outlined text-[20px]">logout</span>
+<span class="text-sm font-medium">Sign Out</span>
+</button>
+</div>
+</aside>
+<!-- Main Content -->
+<main class="flex-1 overflow-y-auto bg-background-light dark:bg-background-dark">
+<div class="mx-auto max-w-5xl px-6 py-8 md:px-12 md:py-12">
+<!-- Header -->
+<header class="mb-10 flex flex-col gap-4 border-b border-white/10 pb-6 md:flex-row md:items-end md:justify-between">
+<div>
+<h2 class="font-serif text-3xl text-slate-900 dark:text-white lg:text-4xl">Business Settings</h2>
+<p class="mt-2 text-slate-500 dark:text-text-muted">Manage store details, shipping configurations, and notifications.</p>
+</div>
+<div class="flex gap-3">
+<button class="flex items-center gap-2 rounded-lg border border-slate-200 bg-white px-4 py-2 text-sm font-medium text-slate-700 hover:bg-slate-50 dark:border-white/10 dark:bg-surface-dark dark:text-slate-300 dark:hover:bg-white/5">
+                            Cancel
+                        </button>
+<button class="flex items-center gap-2 rounded-lg bg-primary px-6 py-2 text-sm font-bold text-background-dark shadow-lg shadow-primary/20 transition-all hover:bg-primary-hover hover:shadow-primary/40">
+                            Save Changes
+                        </button>
+</div>
+</header>
+<div class="grid gap-8">
+<!-- Section 1: Business Details -->
+<section class="rounded-xl border border-slate-200 bg-white p-6 shadow-sm dark:border-white/5 dark:bg-surface-dark md:p-8">
+<div class="mb-6 flex items-center gap-3">
+<div class="flex h-10 w-10 items-center justify-center rounded-full bg-primary/10 text-primary">
+<span class="material-symbols-outlined">storefront</span>
+</div>
+<h3 class="font-serif text-xl font-medium text-slate-900 dark:text-white">Business Details</h3>
+</div>
+<div class="grid gap-6 md:grid-cols-2">
+<label class="flex flex-col gap-2">
+<span class="text-sm font-medium text-slate-700 dark:text-slate-300">Business Name</span>
+<input class="rounded-lg border-slate-200 bg-slate-50 px-4 py-3 text-sm text-slate-900 focus:border-primary focus:ring-primary dark:border-white/10 dark:bg-surface-input dark:text-white dark:placeholder-slate-500" type="text" value="Barwon Craft Works"/>
+</label>
+<label class="flex flex-col gap-2">
+<span class="text-sm font-medium text-slate-700 dark:text-slate-300">ABN / ACN</span>
+<input class="rounded-lg border-slate-200 bg-slate-50 px-4 py-3 text-sm text-slate-900 focus:border-primary focus:ring-primary dark:border-white/10 dark:bg-surface-input dark:text-white dark:placeholder-slate-500" type="text" value="82 394 102 443"/>
+</label>
+<label class="flex flex-col gap-2 md:col-span-2">
+<span class="text-sm font-medium text-slate-700 dark:text-slate-300">Business Address</span>
+<textarea class="rounded-lg border-slate-200 bg-slate-50 px-4 py-3 text-sm text-slate-900 focus:border-primary focus:ring-primary dark:border-white/10 dark:bg-surface-input dark:text-white dark:placeholder-slate-500" rows="3">14 Artisan Way, Geelong, VIC 3220, Australia</textarea>
+</label>
+<label class="flex flex-col gap-2">
+<span class="text-sm font-medium text-slate-700 dark:text-slate-300">Support Email</span>
+<input class="rounded-lg border-slate-200 bg-slate-50 px-4 py-3 text-sm text-slate-900 focus:border-primary focus:ring-primary dark:border-white/10 dark:bg-surface-input dark:text-white dark:placeholder-slate-500" type="email" value="hello@barwoncraftworks.com.au"/>
+</label>
+<label class="flex flex-col gap-2">
+<span class="text-sm font-medium text-slate-700 dark:text-slate-300">Currency</span>
+<div class="relative">
+<select class="w-full appearance-none rounded-lg border-slate-200 bg-slate-50 px-4 py-3 text-sm text-slate-900 focus:border-primary focus:ring-primary dark:border-white/10 dark:bg-surface-input dark:text-white">
+<option selected="">AUD ($)</option>
+<option>USD ($)</option>
+<option>EUR (€)</option>
+</select>
+<div class="pointer-events-none absolute inset-y-0 right-0 flex items-center px-4 text-slate-500">
+<span class="material-symbols-outlined text-sm">expand_more</span>
+</div>
+</div>
+</label>
+</div>
+</section>
+<!-- Section 2: Shipping Configuration -->
+<section class="rounded-xl border border-slate-200 bg-white p-6 shadow-sm dark:border-white/5 dark:bg-surface-dark md:p-8">
+<div class="mb-6 flex items-center justify-between">
+<div class="flex items-center gap-3">
+<div class="flex h-10 w-10 items-center justify-center rounded-full bg-primary/10 text-primary">
+<span class="material-symbols-outlined">local_shipping</span>
+</div>
+<h3 class="font-serif text-xl font-medium text-slate-900 dark:text-white">Shipping Rates (AusPost)</h3>
+</div>
+<button class="text-sm font-medium text-primary hover:text-primary-hover hover:underline">Add New Zone</button>
+</div>
+<div class="overflow-hidden rounded-lg border border-slate-200 dark:border-white/10">
+<table class="w-full text-left text-sm">
+<thead class="bg-slate-50 text-slate-500 dark:bg-surface-input dark:text-slate-400">
+<tr>
+<th class="px-6 py-3 font-medium">Zone</th>
+<th class="px-6 py-3 font-medium">Service</th>
+<th class="px-6 py-3 font-medium">Rate Type</th>
+<th class="px-6 py-3 font-medium text-right">Price (AUD)</th>
+<th class="px-6 py-3 font-medium"></th>
+</tr>
+</thead>
+<tbody class="divide-y divide-slate-200 dark:divide-white/5 bg-white dark:bg-surface-dark">
+<tr class="group hover:bg-slate-50 dark:hover:bg-white/5">
+<td class="px-6 py-4 font-medium text-slate-900 dark:text-white">Australia (Domestic)</td>
+<td class="px-6 py-4 text-slate-500 dark:text-slate-300">Standard Post</td>
+<td class="px-6 py-4">
+<span class="inline-flex items-center rounded-full bg-blue-100 px-2.5 py-0.5 text-xs font-medium text-blue-800 dark:bg-blue-900/30 dark:text-blue-300">Flat Rate</span>
+</td>
+<td class="px-6 py-4 text-right font-medium text-slate-900 dark:text-white">$12.50</td>
+<td class="px-6 py-4 text-right">
+<button class="text-slate-400 hover:text-primary dark:text-slate-500 dark:hover:text-primary">
+<span class="material-symbols-outlined text-[20px]">edit</span>
+</button>
+</td>
+</tr>
+<tr class="group hover:bg-slate-50 dark:hover:bg-white/5">
+<td class="px-6 py-4 font-medium text-slate-900 dark:text-white">Australia (Domestic)</td>
+<td class="px-6 py-4 text-slate-500 dark:text-slate-300">Express Post</td>
+<td class="px-6 py-4">
+<span class="inline-flex items-center rounded-full bg-blue-100 px-2.5 py-0.5 text-xs font-medium text-blue-800 dark:bg-blue-900/30 dark:text-blue-300">Flat Rate</span>
+</td>
+<td class="px-6 py-4 text-right font-medium text-slate-900 dark:text-white">$18.95</td>
+<td class="px-6 py-4 text-right">
+<button class="text-slate-400 hover:text-primary dark:text-slate-500 dark:hover:text-primary">
+<span class="material-symbols-outlined text-[20px]">edit</span>
+</button>
+</td>
+</tr>
+<tr class="group hover:bg-slate-50 dark:hover:bg-white/5">
+<td class="px-6 py-4 font-medium text-slate-900 dark:text-white">International (NZ)</td>
+<td class="px-6 py-4 text-slate-500 dark:text-slate-300">Economy Air</td>
+<td class="px-6 py-4">
+<span class="inline-flex items-center rounded-full bg-purple-100 px-2.5 py-0.5 text-xs font-medium text-purple-800 dark:bg-purple-900/30 dark:text-purple-300">Weight Based</span>
+</td>
+<td class="px-6 py-4 text-right font-medium text-slate-900 dark:text-white">Calculated</td>
+<td class="px-6 py-4 text-right">
+<button class="text-slate-400 hover:text-primary dark:text-slate-500 dark:hover:text-primary">
+<span class="material-symbols-outlined text-[20px]">edit</span>
+</button>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+<!-- Section 3: Notifications -->
+<section class="rounded-xl border border-slate-200 bg-white p-6 shadow-sm dark:border-white/5 dark:bg-surface-dark md:p-8">
+<div class="mb-6 flex items-center gap-3">
+<div class="flex h-10 w-10 items-center justify-center rounded-full bg-primary/10 text-primary">
+<span class="material-symbols-outlined">notifications_active</span>
+</div>
+<h3 class="font-serif text-xl font-medium text-slate-900 dark:text-white">Email Notifications</h3>
+</div>
+<div class="grid gap-6 md:grid-cols-2">
+<!-- Card 1 -->
+<div class="flex items-start justify-between rounded-lg border border-slate-100 bg-slate-50 p-4 dark:border-white/5 dark:bg-surface-input">
+<div class="flex flex-col gap-1">
+<span class="text-base font-medium text-slate-900 dark:text-white">Order Confirmation</span>
+<span class="text-sm text-slate-500 dark:text-slate-400">Sent to customer upon purchase</span>
+</div>
+<div class="relative inline-block w-12 mr-2 align-middle select-none transition duration-200 ease-in">
+<input class="toggle-checkbox absolute block w-6 h-6 rounded-full bg-white border-4 appearance-none cursor-pointer border-slate-300 dark:border-slate-600" id="toggle1" name="toggle" type="checkbox"/>
+<label class="toggle-label block overflow-hidden h-6 rounded-full bg-slate-300 dark:bg-slate-700 cursor-pointer" for="toggle1"></label>
+</div>
+</div>
+<!-- Card 2 -->
+<div class="flex items-start justify-between rounded-lg border border-slate-100 bg-slate-50 p-4 dark:border-white/5 dark:bg-surface-input">
+<div class="flex flex-col gap-1">
+<span class="text-base font-medium text-slate-900 dark:text-white">Order Shipped</span>
+<span class="text-sm text-slate-500 dark:text-slate-400">Sent when tracking is added</span>
+</div>
+<div class="relative inline-block w-12 mr-2 align-middle select-none transition duration-200 ease-in">
+<input checked="" class="toggle-checkbox absolute block w-6 h-6 rounded-full bg-white border-4 appearance-none cursor-pointer border-slate-300 dark:border-slate-600" id="toggle2" name="toggle" type="checkbox"/>
+<label class="toggle-label block overflow-hidden h-6 rounded-full bg-slate-300 dark:bg-slate-700 cursor-pointer" for="toggle2"></label>
+</div>
+</div>
+<!-- Card 3 -->
+<div class="flex items-start justify-between rounded-lg border border-slate-100 bg-slate-50 p-4 dark:border-white/5 dark:bg-surface-input">
+<div class="flex flex-col gap-1">
+<span class="text-base font-medium text-slate-900 dark:text-white">Stripe Receipt</span>
+<span class="text-sm text-slate-500 dark:text-slate-400">Send standard Stripe receipt</span>
+</div>
+<div class="relative inline-block w-12 mr-2 align-middle select-none transition duration-200 ease-in">
+<input class="toggle-checkbox absolute block w-6 h-6 rounded-full bg-white border-4 appearance-none cursor-pointer border-slate-300 dark:border-slate-600" id="toggle3" name="toggle" type="checkbox"/>
+<label class="toggle-label block overflow-hidden h-6 rounded-full bg-slate-300 dark:bg-slate-700 cursor-pointer" for="toggle3"></label>
+</div>
+</div>
+<!-- Card 4 -->
+<div class="flex items-start justify-between rounded-lg border border-slate-100 bg-slate-50 p-4 dark:border-white/5 dark:bg-surface-input">
+<div class="flex flex-col gap-1">
+<span class="text-base font-medium text-slate-900 dark:text-white">Low Stock Alert</span>
+<span class="text-sm text-slate-500 dark:text-slate-400">Admin notification (inventory &lt; 2)</span>
+</div>
+<div class="relative inline-block w-12 mr-2 align-middle select-none transition duration-200 ease-in">
+<input checked="" class="toggle-checkbox absolute block w-6 h-6 rounded-full bg-white border-4 appearance-none cursor-pointer border-slate-300 dark:border-slate-600" id="toggle4" name="toggle" type="checkbox"/>
+<label class="toggle-label block overflow-hidden h-6 rounded-full bg-slate-300 dark:bg-slate-700 cursor-pointer" for="toggle4"></label>
+</div>
+</div>
+</div>
+</section>
+<!-- Advanced / Danger Zone -->
+<section class="opacity-80 transition-opacity hover:opacity-100">
+<div class="rounded-xl border border-red-200/20 bg-red-50/5 p-6 dark:border-red-900/30 dark:bg-red-900/10">
+<div class="flex flex-col gap-4 md:flex-row md:items-center md:justify-between">
+<div>
+<h3 class="text-lg font-medium text-red-700 dark:text-red-400">Maintenance Mode</h3>
+<p class="text-sm text-red-600/80 dark:text-red-400/70">Enable this to hide the store from the public while you make changes.</p>
+</div>
+<div class="relative inline-block w-12 mr-2 align-middle select-none transition duration-200 ease-in">
+<input class="toggle-checkbox absolute block w-6 h-6 rounded-full bg-white border-4 appearance-none cursor-pointer border-red-300 dark:border-red-900" id="toggle_maintenance" name="toggle" type="checkbox"/>
+<label class="toggle-label block overflow-hidden h-6 rounded-full bg-red-200 dark:bg-red-950 cursor-pointer" for="toggle_maintenance"></label>
+</div>
+</div>
+</div>
+</section>
+<div class="h-10"></div> <!-- Spacer -->
+</div>
+</div>
+</main>
+</div>
+</body></html>

@@ -1,0 +1,449 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Barwon Admin - 3D Print Management</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;900&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script>
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        primary: "#203c35", // Deep green
+                        secondary: "#d4af37", // Gold accent for luxury feel
+                        "background-light": "#f6f7f7",
+                        "background-dark": "#161c1b",
+                        "surface-dark": "#1f2524",
+                        "surface-light": "#ffffff",
+                        "border-dark": "#2a3331",
+                        "text-muted": "#a6b0ad"
+                    },
+                    fontFamily: {
+                        display: ["Inter", "sans-serif"],
+                    },
+                    borderRadius: {
+                        DEFAULT: "0.5rem",
+                        lg: "1rem",
+                        xl: "1.5rem",
+                        full: "9999px"
+                    },
+                },
+            },
+        }
+    </script>
+<style>
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+        /* Custom scrollbar for dark theme */
+        ::-webkit-scrollbar {
+            width: 8px;
+            height: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #161c1b; 
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #2a3331; 
+            border-radius: 4px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #203c35; 
+        }
+    </style>
+</head>
+<body class="bg-background-light dark:bg-background-dark text-slate-900 dark:text-slate-100 overflow-hidden">
+<div class="flex h-screen w-full overflow-hidden bg-background-light dark:bg-background-dark">
+<!-- Side Navigation -->
+<div class="relative hidden w-72 flex-col border-r border-border-dark bg-surface-dark md:flex">
+<div class="flex h-full flex-col justify-between p-4">
+<div class="flex flex-col gap-4">
+<div class="flex gap-3 px-2 py-4">
+<div class="aspect-square size-12 rounded-full bg-cover bg-center border-2 border-primary" data-alt="Abstract artisan wood texture" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuD2n85RuuYaE7Y2bL2sMT96ED8IFaz3qpPzDBPz1ivRMBUFQ2IzLO1rrITgLz9-hkmmbHzER9EBk8L10e4apKTX3cPH9iqQ1hMSJQxM2c2coiRp0Xqu7pH2yuy5bY__vkRoemE_kuhplxEEbVToDEPVMu7BR9cjhjJbYhX1VfuowH3p5Y4LqWdxmkTf1Zm_8358EAWFXc351XNSWDj7VfjdpUk5OWPGdvMlUxFsgj69vwH_JjnZ03j3IiR6NcwwRrlE8m5Wlco_4omy");'></div>
+<div class="flex flex-col justify-center">
+<h1 class="text-white text-base font-bold leading-normal">Barwon Admin</h1>
+<p class="text-text-muted text-xs font-normal leading-normal">Craft Works</p>
+</div>
+</div>
+<div class="flex flex-col gap-2">
+<a class="flex items-center gap-3 rounded-lg px-3 py-2 text-text-muted hover:bg-primary/20 hover:text-white transition-colors" href="#">
+<span class="material-symbols-outlined text-[24px]">dashboard</span>
+<p class="text-sm font-medium leading-normal">Dashboard</p>
+</a>
+<a class="flex items-center gap-3 rounded-lg px-3 py-2 text-text-muted hover:bg-primary/20 hover:text-white transition-colors" href="#">
+<span class="material-symbols-outlined text-[24px]">shopping_cart</span>
+<p class="text-sm font-medium leading-normal">Orders</p>
+</a>
+<a class="flex items-center gap-3 rounded-lg px-3 py-2 text-text-muted hover:bg-primary/20 hover:text-white transition-colors" href="#">
+<span class="material-symbols-outlined text-[24px]">inventory_2</span>
+<p class="text-sm font-medium leading-normal">Inventory</p>
+</a>
+<a class="flex items-center gap-3 rounded-lg bg-primary/30 px-3 py-2 text-white border-l-4 border-secondary" href="#">
+<span class="material-symbols-outlined text-[24px] fill-current">print</span>
+<p class="text-sm font-bold leading-normal">3D Print Jobs</p>
+</a>
+<a class="flex items-center gap-3 rounded-lg px-3 py-2 text-text-muted hover:bg-primary/20 hover:text-white transition-colors" href="#">
+<span class="material-symbols-outlined text-[24px]">settings</span>
+<p class="text-sm font-medium leading-normal">Settings</p>
+</a>
+</div>
+</div>
+<div class="flex flex-col gap-1">
+<button class="flex items-center gap-3 rounded-lg px-3 py-2 text-text-muted hover:text-red-400 hover:bg-red-900/10 transition-colors w-full text-left">
+<span class="material-symbols-outlined text-[24px]">logout</span>
+<p class="text-sm font-medium leading-normal">Logout</p>
+</button>
+</div>
+</div>
+</div>
+<!-- Main Content Area -->
+<div class="flex flex-1 flex-col overflow-hidden">
+<!-- Header -->
+<header class="flex h-16 w-full items-center justify-between border-b border-border-dark bg-surface-dark px-6">
+<h2 class="text-xl font-bold text-white tracking-tight">3D Print Management</h2>
+<div class="flex items-center gap-4">
+<button class="relative rounded-full bg-border-dark p-2 text-text-muted hover:text-white">
+<span class="material-symbols-outlined">notifications</span>
+<span class="absolute top-1 right-1 h-2 w-2 rounded-full bg-secondary"></span>
+</button>
+<button class="flex h-9 items-center justify-center gap-2 rounded-lg bg-secondary px-4 text-sm font-bold text-surface-dark hover:bg-yellow-400 transition-colors">
+<span class="material-symbols-outlined text-[20px]">add</span>
+<span>New Job</span>
+</button>
+</div>
+</header>
+<!-- Content Layout: List + Detail Panel -->
+<div class="flex flex-1 overflow-hidden">
+<!-- Left Side: Table / List -->
+<div class="flex flex-1 flex-col overflow-y-auto bg-background-dark p-6">
+<!-- KPI Cards -->
+<div class="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-4 mb-6">
+<div class="rounded-xl border border-border-dark bg-surface-dark p-4 shadow-sm">
+<div class="flex items-center justify-between mb-2">
+<p class="text-sm font-medium text-text-muted">Pending Quotes</p>
+<span class="material-symbols-outlined text-secondary text-[20px]">request_quote</span>
+</div>
+<p class="text-2xl font-bold text-white">12</p>
+<p class="text-xs text-green-400 mt-1 flex items-center gap-1"><span class="material-symbols-outlined text-[14px]">trending_up</span> +2% this week</p>
+</div>
+<div class="rounded-xl border border-border-dark bg-surface-dark p-4 shadow-sm">
+<div class="flex items-center justify-between mb-2">
+<p class="text-sm font-medium text-text-muted">Active Prints</p>
+<span class="material-symbols-outlined text-primary text-[20px]">print</span>
+</div>
+<p class="text-2xl font-bold text-white">4</p>
+<p class="text-xs text-green-400 mt-1 flex items-center gap-1"><span class="material-symbols-outlined text-[14px]">add</span> 1 new job</p>
+</div>
+<div class="rounded-xl border border-border-dark bg-surface-dark p-4 shadow-sm">
+<div class="flex items-center justify-between mb-2">
+<p class="text-sm font-medium text-text-muted">Completed</p>
+<span class="material-symbols-outlined text-blue-400 text-[20px]">check_circle</span>
+</div>
+<p class="text-2xl font-bold text-white">156</p>
+<p class="text-xs text-green-400 mt-1 flex items-center gap-1"><span class="material-symbols-outlined text-[14px]">trending_up</span> +15%</p>
+</div>
+<div class="rounded-xl border border-border-dark bg-surface-dark p-4 shadow-sm">
+<div class="flex items-center justify-between mb-2">
+<p class="text-sm font-medium text-text-muted">Revenue</p>
+<span class="material-symbols-outlined text-green-500 text-[20px]">payments</span>
+</div>
+<p class="text-2xl font-bold text-white">$3,240</p>
+<p class="text-xs text-green-400 mt-1 flex items-center gap-1"><span class="material-symbols-outlined text-[14px]">trending_up</span> +8%</p>
+</div>
+</div>
+<!-- Table Container -->
+<div class="rounded-xl border border-border-dark bg-surface-dark overflow-hidden flex-1 flex flex-col min-h-0">
+<div class="flex items-center justify-between border-b border-border-dark px-4 py-3 bg-surface-dark">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-text-muted">filter_list</span>
+<span class="text-sm font-medium text-white">All Jobs</span>
+</div>
+<div class="relative">
+<span class="absolute left-2.5 top-1/2 -translate-y-1/2 material-symbols-outlined text-text-muted text-[18px]">search</span>
+<input class="h-9 w-64 rounded-lg bg-background-dark border-border-dark pl-9 pr-4 text-sm text-white placeholder-text-muted focus:border-primary focus:ring-1 focus:ring-primary" placeholder="Search files..." type="text"/>
+</div>
+</div>
+<div class="overflow-auto flex-1">
+<table class="w-full text-left">
+<thead class="sticky top-0 bg-[#1a211f] z-10">
+<tr>
+<th class="px-6 py-3 text-xs font-semibold text-text-muted uppercase tracking-wider">File Name</th>
+<th class="px-6 py-3 text-xs font-semibold text-text-muted uppercase tracking-wider">Material</th>
+<th class="px-6 py-3 text-xs font-semibold text-text-muted uppercase tracking-wider">Est. Time</th>
+<th class="px-6 py-3 text-xs font-semibold text-text-muted uppercase tracking-wider">Status</th>
+<th class="px-6 py-3 text-xs font-semibold text-text-muted uppercase tracking-wider text-right">Margin</th>
+<th class="px-6 py-3 text-xs font-semibold text-text-muted uppercase tracking-wider text-right">Actions</th>
+</tr>
+</thead>
+<tbody class="divide-y divide-border-dark">
+<!-- Row 1 - Active -->
+<tr class="hover:bg-primary/10 transition-colors group cursor-pointer bg-primary/5">
+<td class="px-6 py-4">
+<div class="flex items-center gap-3">
+<div class="flex h-10 w-10 flex-none items-center justify-center rounded bg-primary/20 text-secondary">
+<span class="material-symbols-outlined">folder_zip</span>
+</div>
+<div class="flex flex-col">
+<span class="text-sm font-medium text-white">Dragon_Pen_Stand.stl</span>
+<span class="text-xs text-text-muted">Updated 2h ago</span>
+</div>
+</div>
+</td>
+<td class="px-6 py-4">
+<span class="inline-flex items-center rounded bg-background-dark px-2.5 py-1 text-xs font-medium text-text-muted border border-border-dark">
+                                            Resin - Black
+                                        </span>
+</td>
+<td class="px-6 py-4 text-sm text-text-muted">4h 20m</td>
+<td class="px-6 py-4">
+<span class="inline-flex items-center gap-1.5 rounded-full bg-yellow-900/30 px-3 py-1 text-xs font-medium text-yellow-400 border border-yellow-900/50">
+<span class="h-1.5 w-1.5 rounded-full bg-yellow-400 animate-pulse"></span>
+                                            Pending Quote
+                                        </span>
+</td>
+<td class="px-6 py-4 text-right text-sm font-medium text-text-muted">--</td>
+<td class="px-6 py-4 text-right">
+<button class="text-text-muted hover:text-white transition-colors">
+<span class="material-symbols-outlined">download</span>
+</button>
+</td>
+</tr>
+<!-- Row 2 -->
+<tr class="hover:bg-primary/10 transition-colors group cursor-pointer">
+<td class="px-6 py-4">
+<div class="flex items-center gap-3">
+<div class="flex h-10 w-10 flex-none items-center justify-center rounded bg-background-dark text-text-muted">
+<span class="material-symbols-outlined">view_in_ar</span>
+</div>
+<div class="flex flex-col">
+<span class="text-sm font-medium text-white">Vase_Voronoi.obj</span>
+<span class="text-xs text-text-muted">Updated 5h ago</span>
+</div>
+</div>
+</td>
+<td class="px-6 py-4">
+<span class="inline-flex items-center rounded bg-background-dark px-2.5 py-1 text-xs font-medium text-text-muted border border-border-dark">
+                                            PLA - Silk Gold
+                                        </span>
+</td>
+<td class="px-6 py-4 text-sm text-text-muted">12h 00m</td>
+<td class="px-6 py-4">
+<span class="inline-flex items-center gap-1.5 rounded-full bg-blue-900/30 px-3 py-1 text-xs font-medium text-blue-400 border border-blue-900/50">
+<span class="h-1.5 w-1.5 rounded-full bg-blue-400 animate-pulse"></span>
+                                            Printing
+                                        </span>
+</td>
+<td class="px-6 py-4 text-right text-sm font-medium text-green-400">65%</td>
+<td class="px-6 py-4 text-right">
+<button class="text-text-muted hover:text-white transition-colors">
+<span class="material-symbols-outlined">download</span>
+</button>
+</td>
+</tr>
+<!-- Row 3 -->
+<tr class="hover:bg-primary/10 transition-colors group cursor-pointer">
+<td class="px-6 py-4">
+<div class="flex items-center gap-3">
+<div class="flex h-10 w-10 flex-none items-center justify-center rounded bg-background-dark text-text-muted">
+<span class="material-symbols-outlined">view_in_ar</span>
+</div>
+<div class="flex flex-col">
+<span class="text-sm font-medium text-white">Gear_Set_v2.stl</span>
+<span class="text-xs text-text-muted">Updated 1d ago</span>
+</div>
+</div>
+</td>
+<td class="px-6 py-4">
+<span class="inline-flex items-center rounded bg-background-dark px-2.5 py-1 text-xs font-medium text-text-muted border border-border-dark">
+                                            PETG - Grey
+                                        </span>
+</td>
+<td class="px-6 py-4 text-sm text-text-muted">2h 15m</td>
+<td class="px-6 py-4">
+<span class="inline-flex items-center gap-1.5 rounded-full bg-green-900/30 px-3 py-1 text-xs font-medium text-green-400 border border-green-900/50">
+                                            Completed
+                                        </span>
+</td>
+<td class="px-6 py-4 text-right text-sm font-medium text-green-400">40%</td>
+<td class="px-6 py-4 text-right">
+<button class="text-text-muted hover:text-white transition-colors">
+<span class="material-symbols-outlined">download</span>
+</button>
+</td>
+</tr>
+<!-- Row 4 -->
+<tr class="hover:bg-primary/10 transition-colors group cursor-pointer">
+<td class="px-6 py-4">
+<div class="flex items-center gap-3">
+<div class="flex h-10 w-10 flex-none items-center justify-center rounded bg-background-dark text-text-muted">
+<span class="material-symbols-outlined">view_in_ar</span>
+</div>
+<div class="flex flex-col">
+<span class="text-sm font-medium text-white">Lithophane_Box.stl</span>
+<span class="text-xs text-text-muted">Updated 2d ago</span>
+</div>
+</div>
+</td>
+<td class="px-6 py-4">
+<span class="inline-flex items-center rounded bg-background-dark px-2.5 py-1 text-xs font-medium text-text-muted border border-border-dark">
+                                            PLA - White
+                                        </span>
+</td>
+<td class="px-6 py-4 text-sm text-text-muted">8h 45m</td>
+<td class="px-6 py-4">
+<span class="inline-flex items-center gap-1.5 rounded-full bg-surface-dark px-3 py-1 text-xs font-medium text-text-muted border border-border-dark">
+                                            In Queue
+                                        </span>
+</td>
+<td class="px-6 py-4 text-right text-sm font-medium text-green-400">55%</td>
+<td class="px-6 py-4 text-right">
+<button class="text-text-muted hover:text-white transition-colors">
+<span class="material-symbols-outlined">download</span>
+</button>
+</td>
+</tr>
+<!-- Row 5 -->
+<tr class="hover:bg-primary/10 transition-colors group cursor-pointer">
+<td class="px-6 py-4">
+<div class="flex items-center gap-3">
+<div class="flex h-10 w-10 flex-none items-center justify-center rounded bg-background-dark text-text-muted">
+<span class="material-symbols-outlined">view_in_ar</span>
+</div>
+<div class="flex flex-col">
+<span class="text-sm font-medium text-white">Prototype_Mount.3mf</span>
+<span class="text-xs text-text-muted">Updated 3d ago</span>
+</div>
+</div>
+</td>
+<td class="px-6 py-4">
+<span class="inline-flex items-center rounded bg-background-dark px-2.5 py-1 text-xs font-medium text-text-muted border border-border-dark">
+                                            Nylon - CF
+                                        </span>
+</td>
+<td class="px-6 py-4 text-sm text-text-muted">5h 30m</td>
+<td class="px-6 py-4">
+<span class="inline-flex items-center gap-1.5 rounded-full bg-red-900/30 px-3 py-1 text-xs font-medium text-red-400 border border-red-900/50">
+                                            Failed
+                                        </span>
+</td>
+<td class="px-6 py-4 text-right text-sm font-medium text-text-muted">--</td>
+<td class="px-6 py-4 text-right">
+<button class="text-text-muted hover:text-white transition-colors">
+<span class="material-symbols-outlined">download</span>
+</button>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+<!-- Right Side: Detail Panel -->
+<div class="w-[400px] flex-none border-l border-border-dark bg-surface-dark flex flex-col overflow-y-auto">
+<div class="p-6">
+<div class="mb-6 flex items-start justify-between">
+<div>
+<h3 class="text-lg font-bold text-white leading-tight">Dragon_Pen_Stand.stl</h3>
+<p class="text-sm text-text-muted mt-1">Job ID: #993820</p>
+</div>
+<button class="text-text-muted hover:text-white">
+<span class="material-symbols-outlined">close</span>
+</button>
+</div>
+<div class="rounded-lg bg-background-dark p-4 border border-border-dark mb-6">
+<div class="flex justify-center mb-4">
+<div class="h-32 w-32 rounded-lg bg-surface-dark border border-border-dark flex items-center justify-center relative overflow-hidden group">
+<span class="material-symbols-outlined text-4xl text-text-muted group-hover:scale-110 transition-transform">view_in_ar</span>
+<div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
+<span class="absolute bottom-2 left-2 text-xs text-white font-medium">Preview</span>
+</div>
+</div>
+<div class="grid grid-cols-2 gap-4">
+<div>
+<p class="text-xs text-text-muted mb-1">Dimensions</p>
+<p class="text-sm font-medium text-white">120 x 85 x 60 mm</p>
+</div>
+<div>
+<p class="text-xs text-text-muted mb-1">Volume</p>
+<p class="text-sm font-medium text-white">45.2 cm³</p>
+</div>
+</div>
+</div>
+<form class="flex flex-col gap-6">
+<!-- Cost Calculation Section -->
+<div class="space-y-4">
+<div class="flex items-center gap-2 text-secondary">
+<span class="material-symbols-outlined text-[20px]">calculate</span>
+<h4 class="text-sm font-bold uppercase tracking-wider">Cost Calculator</h4>
+</div>
+<div class="grid grid-cols-2 gap-4">
+<div class="space-y-1.5">
+<label class="text-xs font-medium text-text-muted">Material (g)</label>
+<div class="relative">
+<input class="w-full rounded-lg bg-background-dark border-border-dark text-white text-sm focus:border-primary focus:ring-1 focus:ring-primary p-2.5" type="number" value="145"/>
+<span class="absolute right-3 top-2.5 text-xs text-text-muted">g</span>
+</div>
+</div>
+<div class="space-y-1.5">
+<label class="text-xs font-medium text-text-muted">Time (hr)</label>
+<div class="relative">
+<input class="w-full rounded-lg bg-background-dark border-border-dark text-white text-sm focus:border-primary focus:ring-1 focus:ring-primary p-2.5" type="number" value="4.5"/>
+<span class="absolute right-3 top-2.5 text-xs text-text-muted">h</span>
+</div>
+</div>
+</div>
+<div class="space-y-1.5">
+<label class="text-xs font-medium text-text-muted">Base Cost ($)</label>
+<div class="relative">
+<span class="absolute left-3 top-2.5 text-xs text-text-muted">$</span>
+<input class="w-full rounded-lg bg-background-dark border-border-dark text-white text-sm focus:border-primary focus:ring-1 focus:ring-primary pl-6 p-2.5" readonly="" type="number" value="12.50"/>
+</div>
+</div>
+</div>
+<hr class="border-border-dark"/>
+<!-- Quote Section -->
+<div class="space-y-4">
+<div class="flex items-center gap-2 text-white">
+<span class="material-symbols-outlined text-[20px]">payments</span>
+<h4 class="text-sm font-bold uppercase tracking-wider">Quote Details</h4>
+</div>
+<div class="space-y-1.5">
+<label class="text-xs font-medium text-text-muted">Markup (%)</label>
+<div class="flex items-center gap-3">
+<input class="flex-1 h-2 bg-background-dark rounded-lg appearance-none cursor-pointer accent-primary" max="200" min="0" type="range" value="150"/>
+<span class="text-sm font-bold text-white w-10 text-right">150%</span>
+</div>
+</div>
+<div class="space-y-1.5">
+<label class="text-xs font-medium text-text-muted">Final Sell Price ($)</label>
+<div class="relative">
+<span class="absolute left-3 top-3 text-sm text-white font-bold">$</span>
+<input class="w-full rounded-lg bg-primary/10 border-primary text-white text-lg font-bold focus:border-primary focus:ring-1 focus:ring-primary pl-6 p-2.5" type="number" value="31.25"/>
+</div>
+</div>
+<div class="rounded-lg bg-green-900/20 p-3 border border-green-900/30 flex justify-between items-center">
+<span class="text-xs text-green-400 font-medium">Est. Profit</span>
+<span class="text-sm font-bold text-green-400">+$18.75</span>
+</div>
+</div>
+<div class="pt-4 flex flex-col gap-3">
+<button class="w-full rounded-lg bg-secondary py-3 px-4 text-sm font-bold text-surface-dark shadow-lg hover:bg-yellow-400 transition-all flex items-center justify-center gap-2" type="button">
+<span class="material-symbols-outlined text-[20px]">send</span>
+                                Send Quote
+                            </button>
+<button class="w-full rounded-lg bg-transparent border border-border-dark py-3 px-4 text-sm font-medium text-text-muted hover:text-white hover:border-text-muted transition-colors" type="button">
+                                Save as Draft
+                            </button>
+</div>
+</form>
+</div>
+</div>
+</div>
+</div>
+</div>
+</body></html>

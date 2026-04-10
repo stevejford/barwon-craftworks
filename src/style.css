@@ -1,0 +1,95 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --primary: #203c35;
+  --accent-gold: #d4af37;
+  --accent-gold-light: #e5c05c;
+
+  /* Classic Luxurious Light Theme (Parchment & Forest) */
+  --bg-light: #fdfaf3;
+  --surface-light: #f5f0e1;
+  --text-light: #1a1c1b;
+  --border-light: #e5dec9;
+
+  /* Deep Midnight Dark Theme */
+  --bg-dark: #0d0f0e;
+  --surface-dark: #131615;
+  --text-dark: #f1f5f9;
+  --border-dark: #2e3332;
+}
+
+/* Base applies based on the 'dark' class on <html> or <body> */
+body {
+  @apply transition-colors duration-500 bg-[var(--bg-light)] text-[var(--text-light)];
+  margin: 0;
+  font-family: 'Inter', system-ui, -apple-system, sans-serif;
+}
+
+body.dark {
+  @apply bg-[var(--bg-dark)] text-[var(--text-dark)];
+}
+
+/* Custom Scrollbar - "Always Lit Up" */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  @apply bg-transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--accent-gold);
+  border-radius: 10px;
+  border: 3px solid transparent;
+  background-clip: content-box;
+  box-shadow: inset 0 0 0 10px var(--accent-gold);
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--accent-gold-light);
+  box-shadow: inset 0 0 0 10px var(--accent-gold-light);
+}
+
+/* Global Navigation & Layout Helpers */
+.nav-link {
+  @apply transition-colors duration-300;
+}
+
+.dark .nav-link {
+  @apply text-slate-300 hover:text-accent-gold;
+}
+
+.light .nav-link {
+  @apply text-slate-700 hover:text-primary;
+}
+
+/* Front Site Theme Utilities */
+.theme-card {
+  @apply transition-all duration-300 border;
+}
+
+.dark .theme-card {
+  @apply bg-[#131615] border-[#2e3332] shadow-xl;
+}
+
+.light .theme-card {
+  @apply bg-[#f5f0e1] border-[#e5dec9] shadow-md;
+}
+
+.gold-gradient-text {
+  @apply bg-clip-text text-transparent bg-gradient-to-r from-accent-gold via-accent-gold-light to-accent-gold;
+}
+
+/* Admin Specific Overrides */
+.theme-light .admin-card {
+  background-color: #ffffff;
+  border-color: #f1f5f9;
+}
+
+.theme-dark .admin-card {
+  background-color: #131615;
+  border-color: #2e3332;
+}

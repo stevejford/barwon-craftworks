@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>About Barwon Craft Works</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;900&amp;family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&amp;family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script>
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        primary: "#203c35", // Deep green
+                        secondary: "#d4af37", // Gold accent
+                        "background-light": "#f6f7f7",
+                        "background-dark": "#131615", // Very dark charcoal/green
+                        "card-dark": "#1f2322",
+                    },
+                    fontFamily: {
+                        display: ["Inter", "sans-serif"],
+                        serif: ["Playfair Display", "serif"],
+                    },
+                    borderRadius: {
+                        "DEFAULT": "0.5rem",
+                        "lg": "1rem",
+                        "xl": "1.5rem",
+                        "full": "9999px"
+                    },
+                },
+            },
+        }
+    </script>
+</head>
+<body class="bg-background-light dark:bg-background-dark text-slate-900 dark:text-slate-100 font-display min-h-screen flex flex-col">
+<!-- Top Navigation -->
+<header class="sticky top-0 z-50 w-full border-b border-[#2e3332] bg-[#131615]/90 backdrop-blur-md">
+<div class="max-w-[1280px] mx-auto px-4 sm:px-10 h-16 flex items-center justify-between">
+<div class="flex items-center gap-3 text-white">
+<div class="size-6 text-secondary">
+<span class="material-symbols-outlined text-2xl">carpenter</span>
+</div>
+<h2 class="text-white text-lg font-serif font-bold tracking-tight">Barwon Craft Works</h2>
+</div>
+<div class="hidden md:flex items-center gap-8">
+<nav class="flex items-center gap-6">
+<a class="text-slate-300 hover:text-secondary transition-colors text-sm font-medium" href="#">Home</a>
+<a class="text-slate-300 hover:text-secondary transition-colors text-sm font-medium" href="#">Shop Pens</a>
+<a class="text-slate-300 hover:text-secondary transition-colors text-sm font-medium" href="#">3D Printing</a>
+<a class="text-white text-sm font-medium border-b border-secondary pb-0.5" href="#">Our Story</a>
+<a class="text-slate-300 hover:text-secondary transition-colors text-sm font-medium" href="#">Contact</a>
+</nav>
+<button class="bg-primary hover:bg-[#2a4d44] text-white text-sm font-bold py-2 px-5 rounded-xl transition-colors shadow-[0_0_15px_rgba(32,60,53,0.5)]">
+                    Shop Now
+                </button>
+</div>
+<!-- Mobile Menu Icon -->
+<div class="md:hidden text-white">
+<span class="material-symbols-outlined">menu</span>
+</div>
+</div>
+</header>
+<main class="flex-grow">
+<!-- Hero Section -->
+<section class="relative w-full h-[60vh] min-h-[500px] flex items-center justify-center overflow-hidden">
+<div class="absolute inset-0 bg-cover bg-center bg-no-repeat" data-alt="Close up of wood shavings and chisel on workbench" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuBo8CpNU_Ysy77b506R837-ntetpNYOnuLAOu-ljC1H3IkQRJPoxyHNuM3fEBrwX-wtBDW67RdKJHN7WxPaaXISLv6Sr030DPYhLEpAIVmAHYXK6UyHXNttHK4fAOs_xi3MUEt9qZK9SIahUspoBEm6hIptcp5N8TYSXEIHNtmgzq5W3hdntbK2n2O2ssBTKy6qV-hQTT4EfYMy7K8kxT6Bg1BMPHWj3icSDLnWUypAlvlb-FjJusqg1ZtnzlMvNgCfFbB0mkjmycIU');">
+<div class="absolute inset-0 bg-gradient-to-b from-background-dark/80 via-background-dark/60 to-background-dark"></div>
+</div>
+<div class="relative z-10 max-w-4xl px-6 text-center">
+<span class="block text-secondary font-medium tracking-[0.2em] uppercase text-sm mb-4">Established in Geelong</span>
+<h1 class="text-white font-serif text-5xl md:text-7xl font-bold leading-tight mb-6">
+                    Crafting Elegance <br/> <span class="text-slate-300 italic font-light">From Nature &amp; Technology</span>
+</h1>
+<p class="text-slate-300 text-lg md:text-xl max-w-2xl mx-auto font-light leading-relaxed">
+                    Where traditional woodturning meets modern precision. Discover the art and passion behind every unique piece created at Barwon Craft Works.
+                </p>
+</div>
+</section>
+<!-- Our Story / Intro -->
+<section class="py-20 px-4 sm:px-10 bg-background-dark">
+<div class="max-w-[960px] mx-auto grid md:grid-cols-2 gap-12 items-center">
+<div class="order-2 md:order-1 relative group">
+<div class="absolute -inset-2 bg-gradient-to-r from-primary to-secondary rounded-2xl opacity-20 group-hover:opacity-40 blur-lg transition duration-500"></div>
+<div class="relative h-[500px] w-full bg-cover bg-center rounded-xl overflow-hidden shadow-2xl" data-alt="Artisan hands carefully working on a lathe" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuALxp5RGPBht7y4JvWGYy5t7gW6lA0E031yIHHqqwkQ0FBa3SwNmJuS_35NoOZPk8z5PtqhcG8RIZCT1DTPJ8Wf8g18h-PgLW-bAX2bgcOctsUi4fmu-Elnpd1Sf2VDJ7bwDAVnLwDiLDLSPFdFUvFiqdw_A6JIPU1qvpB4vpTnbMm2VhNt5ivSFkH7CySnAxfxnE8stnBGyVD7fGeZ0gGC0my3ojnnt3-EKgZpnNoWd9QTQYkkwnotfp4ne1-hBvpfvgaax6GZgH1s');">
+<div class="absolute inset-0 bg-black/20 group-hover:bg-transparent transition-colors duration-500"></div>
+</div>
+</div>
+<div class="order-1 md:order-2 flex flex-col gap-6">
+<h2 class="text-3xl md:text-4xl font-serif font-bold text-white">
+                        A Fusion of <span class="text-secondary">Heritage</span> &amp; Innovation
+                    </h2>
+<div class="w-20 h-1 bg-secondary rounded-full"></div>
+<p class="text-slate-300 leading-relaxed text-lg">
+                        Barwon Craft Works began in a small workshop in Geelong with a simple lathe and a passion for local timber. Today, it stands as a testament to the marriage of old-world patience and new-world technology.
+                    </p>
+<p class="text-slate-400 leading-relaxed">
+                        We don't just make pens; we craft heirlooms. By combining the tactile warmth of Australian hardwoods with the infinite possibilities of 3D printing, we create bespoke items that are as functional as they are beautiful.
+                    </p>
+<div class="pt-4">
+<div class="flex items-center gap-4 text-secondary">
+<span class="material-symbols-outlined">location_on</span>
+<span class="text-sm font-medium tracking-wide uppercase">Handmade in Geelong, Victoria</span>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Our Craft Process (Cards) -->
+<section class="py-24 px-4 sm:px-10 bg-[#161a19]">
+<div class="max-w-[1100px] mx-auto">
+<div class="text-center mb-16">
+<h2 class="text-3xl md:text-4xl font-serif font-bold text-white mb-4">The Art of Creation</h2>
+<p class="text-slate-400 max-w-xl mx-auto">Every piece is a testament to patience, precision, and passion. Our three-step philosophy ensures perfection.</p>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+<!-- Card 1 -->
+<div class="group relative bg-[#1f2322] border border-[#2e3332] rounded-xl p-8 hover:border-secondary/50 transition-all duration-300 hover:-translate-y-1">
+<div class="absolute top-0 right-0 p-4 opacity-10 group-hover:opacity-20 transition-opacity">
+<span class="material-symbols-outlined text-[100px] text-secondary">forest</span>
+</div>
+<div class="mb-6 inline-flex items-center justify-center w-12 h-12 rounded-full bg-primary/20 text-secondary border border-primary/30">
+<span class="material-symbols-outlined">forest</span>
+</div>
+<h3 class="text-xl font-serif font-bold text-white mb-3">Material Selection</h3>
+<p class="text-slate-400 text-sm leading-relaxed mb-6">
+                            We meticulously source the finest local timbers and high-quality resins. We look for the story in the grain, ensuring that the raw material dictates the final form of the masterpiece.
+                        </p>
+<div class="h-40 w-full rounded-lg bg-cover bg-center grayscale group-hover:grayscale-0 transition-all duration-500" data-alt="Stack of raw timber blocks with rich grain" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuDkRcstyoTaMSwA9OuZc4gq5AGUbFJox2MWC7PDeQWILaWs41a3qJbE71nNwu0GvUNET95H0QdBbuzldLWS-tih5_CMsQO79UG0fFPItQd18pf5NEIZI_plWP34BugtkYJz-UDEeahs45ToO8u0D2AZXlp1uZF4FgteHZZhmoEPN8FelLKeZdfJbD-pjBGlM316HbB_cU0tVtQri4SXvAUZFW_aPTIRqxAK-bCH7bIsXeFfq48ZucaXaUWdx_YKC8A6jQ47uFzqe-ap');"></div>
+</div>
+<!-- Card 2 -->
+<div class="group relative bg-[#1f2322] border border-[#2e3332] rounded-xl p-8 hover:border-secondary/50 transition-all duration-300 hover:-translate-y-1">
+<div class="absolute top-0 right-0 p-4 opacity-10 group-hover:opacity-20 transition-opacity">
+<span class="material-symbols-outlined text-[100px] text-secondary">handyman</span>
+</div>
+<div class="mb-6 inline-flex items-center justify-center w-12 h-12 rounded-full bg-primary/20 text-secondary border border-primary/30">
+<span class="material-symbols-outlined">handyman</span>
+</div>
+<h3 class="text-xl font-serif font-bold text-white mb-3">Precision Turning</h3>
+<p class="text-slate-400 text-sm leading-relaxed mb-6">
+                            Each pen is hand-turned on a lathe in our Geelong workshop. Whether wood or resin, the material is shaped with an obsessive eye for perfect balance, weight, and ergonomic comfort.
+                        </p>
+<div class="h-40 w-full rounded-lg bg-cover bg-center grayscale group-hover:grayscale-0 transition-all duration-500" data-alt="Wood spinning rapidly on a lathe machine" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuCMXhWYtfPN5zvzCPIhtJ5K5qULFOw-nls1EhDo6H1pbXlnJuQ2gSOGfXwy5TvtOHs0K9njkAYGRDBi1PivJlRt8q0NlMsW8Hw_j9HNjUUYeLkSsy7wKQvrN9S6bAZH_H-dWDmDmWEgy_IGqRnbW6e6IV1SUe_Rp6ZKlpWya0ii7bQ4APfNcUyJkD1p7YXVfZzvGeCrr1HscH7QCo9NqXYVAKNjbNEh-zIHOpeWB0rnIp3kMugB8Y3W5ZjjXZD5cfM_EqjWNWP69A4B');"></div>
+</div>
+<!-- Card 3 -->
+<div class="group relative bg-[#1f2322] border border-[#2e3332] rounded-xl p-8 hover:border-secondary/50 transition-all duration-300 hover:-translate-y-1">
+<div class="absolute top-0 right-0 p-4 opacity-10 group-hover:opacity-20 transition-opacity">
+<span class="material-symbols-outlined text-[100px] text-secondary">diamond</span>
+</div>
+<div class="mb-6 inline-flex items-center justify-center w-12 h-12 rounded-full bg-primary/20 text-secondary border border-primary/30">
+<span class="material-symbols-outlined">diamond</span>
+</div>
+<h3 class="text-xl font-serif font-bold text-white mb-3">Fine Finishing</h3>
+<p class="text-slate-400 text-sm leading-relaxed mb-6">
+                            Multiple stages of sanding and polishing result in a glass-like finish that protects the wood for generations. Finally, accented with premium gold or chrome hardware for that luxury feel.
+                        </p>
+<div class="h-40 w-full rounded-lg bg-cover bg-center grayscale group-hover:grayscale-0 transition-all duration-500" data-alt="Polished wooden pen with gold accents close up" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuAFea24gB01GO_40kJ_nu4oq7h_Bmv-Q23TM0TwaoRDun0iAsb5VB3bR0JLvqMzKf3R_pgNlN6L_SxPkMUJuN86LdTxjGNsAKxIqatSxpBdc5McUo0omZD3Yuhhtcm0gQlICpD8KanA07O3MZLJvm0560CO9OT3RDziH_piGjrB8X3RVuWFUoQai3pF7mdvvhH7F3Qiq4St4pYT7qMfNzVKLCZawOrCzv7T2tOjXYTtwSOAlwTDE2WvuRU1iToQLpy1kx516mrru991');"></div>
+</div>
+</div>
+</div>
+</section>
+<!-- Stats / Showcase -->
+<section class="py-20 px-4 bg-primary text-white relative overflow-hidden">
+<div class="absolute inset-0 bg-[url('https://www.transparenttextures.com/patterns/wood-pattern.png')] opacity-10 mix-blend-overlay"></div>
+<div class="max-w-6xl mx-auto flex flex-col md:flex-row justify-between items-center gap-10 relative z-10">
+<div class="text-center md:text-left">
+<h2 class="text-3xl font-serif font-bold mb-2">Unique Pieces Created</h2>
+<p class="text-emerald-100">Every item is one of a kind.</p>
+</div>
+<div class="flex gap-12 md:gap-24">
+<div class="text-center">
+<span class="block text-4xl md:text-5xl font-bold font-serif mb-1">500+</span>
+<span class="text-sm uppercase tracking-wider text-emerald-200">Pens Turned</span>
+</div>
+<div class="text-center">
+<span class="block text-4xl md:text-5xl font-bold font-serif mb-1">100%</span>
+<span class="text-sm uppercase tracking-wider text-emerald-200">Local Timber</span>
+</div>
+<div class="text-center">
+<span class="block text-4xl md:text-5xl font-bold font-serif mb-1">50+</span>
+<span class="text-sm uppercase tracking-wider text-emerald-200">3D Designs</span>
+</div>
+</div>
+</div>
+</section>
+<!-- Meet the Maker -->
+<section class="py-24 px-4 sm:px-10 bg-background-dark">
+<div class="max-w-[960px] mx-auto">
+<div class="bg-[#1f2322] rounded-2xl p-8 md:p-12 border border-[#2e3332] flex flex-col md:flex-row gap-10 items-center">
+<div class="w-full md:w-1/3">
+<div class="aspect-square rounded-full overflow-hidden border-4 border-[#2e3332] shadow-xl mx-auto max-w-[250px]">
+<img alt="Portrait of the artisan craftsman" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDRyFR4416TFmr9hnn-RG-KVsGKuhPJwpZs6HZUxgtBBQzPPwgKfugbqmNrlv1dt-klp_fJArAkugRewAaUHaLXr2o0HRUz8EAR62oEG-ahL9MAeklmYYXlC4vc1KK9fIPtkFOcrNVq96PrFWVF6_MnjeD_uxUi8FUsVpvDU2yhYjrkoMOfjnLnTfhzumS4hehDJsqSTYWfIxcHVOjUZwEq2uleiODLnev2cdIWxubxIqdu0z6DUOGDloEGNd9gg_LPRE1R7m8WNvRC"/>
+</div>
+</div>
+<div class="w-full md:w-2/3 text-center md:text-left">
+<h2 class="text-2xl font-bold text-secondary mb-1 tracking-wider uppercase text-sm">Meet the Maker</h2>
+<h3 class="text-3xl md:text-4xl font-serif font-bold text-white mb-6">Driven by a Love for Woodworking</h3>
+<p class="text-slate-300 mb-6 leading-relaxed">
+                            "I started Barwon Craft Works to slow down and appreciate the tangible. In a digital world, holding a pen that was crafted from a tree that grew for decades is a grounding experience. My goal is to share that feeling with you."
+                        </p>
+<img class="h-12 opacity-70 invert mx-auto md:mx-0" data-alt="Signature of the craftsman" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBON3MBRwk0_DUUaouVRoSHVRjGODpfCXtKLud8HR2runt7meWoz9DXaowpyRa3RtummXOxOFL6QDzfACkGf_6lpDpqAdIJJ0M3Dmg3T07HzBnQA76mCxG9-DI0oPaqZqK_O04rgsuav1I93NSo6ihbWzNTd6hCkW6GA0HwfihdAZLBZGoKVNyANqlWBgstGue2R3Dm_qG6Yxjxpme5hW4nx1Ey-fxBI-Mut7FPGrJ9hKmVzFfSuJHGMYhBrEC4v8THi8gtKhWtPYlm"/>
+</div>
+</div>
+</div>
+</section>
+<!-- CTA Section -->
+<section class="py-20 px-4 text-center bg-gradient-to-b from-background-dark to-[#0f1110]">
+<h2 class="text-3xl md:text-5xl font-serif font-bold text-white mb-6">Own a Piece of the Craft</h2>
+<p class="text-slate-400 max-w-xl mx-auto mb-10 text-lg">Browse our collection of hand-turned pens or request a custom 3D printed commission.</p>
+<div class="flex flex-col sm:flex-row gap-4 justify-center">
+<button class="bg-primary hover:bg-[#2a4d44] text-white text-base font-bold py-3 px-8 rounded-xl transition-all shadow-[0_0_20px_rgba(32,60,53,0.4)] hover:shadow-[0_0_30px_rgba(32,60,53,0.6)]">
+                    Shop Collection
+                </button>
+<button class="bg-transparent border border-slate-600 hover:border-secondary hover:text-secondary text-slate-300 text-base font-bold py-3 px-8 rounded-xl transition-all">
+                    Contact for Custom Work
+                </button>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="bg-[#0b0d0c] border-t border-[#2e3332] pt-16 pb-8 px-10">
+<div class="max-w-[1280px] mx-auto grid grid-cols-1 md:grid-cols-4 gap-12 mb-12">
+<div class="col-span-1 md:col-span-1">
+<div class="flex items-center gap-3 text-white mb-6">
+<div class="size-6 text-secondary">
+<span class="material-symbols-outlined text-2xl">carpenter</span>
+</div>
+<h2 class="text-white text-lg font-serif font-bold">Barwon Craft Works</h2>
+</div>
+<p class="text-slate-500 text-sm leading-relaxed">
+                    Hand-turned luxury pens and precision 3D printing services based in Geelong, Victoria.
+                </p>
+</div>
+<div>
+<h3 class="text-white font-bold mb-4">Shop</h3>
+<ul class="flex flex-col gap-2 text-slate-400 text-sm">
+<li><a class="hover:text-secondary transition-colors" href="#">Fountain Pens</a></li>
+<li><a class="hover:text-secondary transition-colors" href="#">Ballpoint Pens</a></li>
+<li><a class="hover:text-secondary transition-colors" href="#">Rollerball Pens</a></li>
+<li><a class="hover:text-secondary transition-colors" href="#">Accessories</a></li>
+</ul>
+</div>
+<div>
+<h3 class="text-white font-bold mb-4">Company</h3>
+<ul class="flex flex-col gap-2 text-slate-400 text-sm">
+<li><a class="hover:text-secondary transition-colors" href="#">Our Story</a></li>
+<li><a class="hover:text-secondary transition-colors" href="#">Process</a></li>
+<li><a class="hover:text-secondary transition-colors" href="#">Shipping Policy</a></li>
+<li><a class="hover:text-secondary transition-colors" href="#">Contact</a></li>
+</ul>
+</div>
+<div>
+<h3 class="text-white font-bold mb-4">Newsletter</h3>
+<p class="text-slate-500 text-sm mb-4">Subscribe for latest drops and workshop updates.</p>
+<div class="flex gap-2">
+<input class="bg-[#1f2322] border-none rounded-lg text-white text-sm px-4 py-2 w-full focus:ring-1 focus:ring-secondary" placeholder="Email address" type="email"/>
+<button class="bg-secondary text-[#131615] rounded-lg px-3 hover:bg-white transition-colors">
+<span class="material-symbols-outlined text-sm">arrow_forward</span>
+</button>
+</div>
+</div>
+</div>
+<div class="border-t border-[#1f2322] pt-8 flex flex-col md:flex-row justify-between items-center gap-4 text-xs text-slate-600">
+<p>© 2023 Barwon Craft Works. All rights reserved.</p>
+<div class="flex gap-6">
+<a class="hover:text-slate-400" href="#">Privacy Policy</a>
+<a class="hover:text-slate-400" href="#">Terms of Service</a>
+</div>
+</div>
+</footer>
+</body></html>

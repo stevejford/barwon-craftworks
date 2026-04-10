@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>3D Printing Service - Barwon Craft Works</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;900&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#d4af37", /* Gold for luxury feel */
+                        "primary-dark": "#b08d26",
+                        "background-light": "#f6f7f7",
+                        "background-dark": "#161c1b",
+                        "surface-dark": "#1f2322",
+                        "surface-darker": "#131615",
+                        "border-color": "#434c4a",
+                        "text-muted": "#a6b0ad"
+                    },
+                    fontFamily: {
+                        "display": ["Inter", "sans-serif"]
+                    },
+                    borderRadius: {"DEFAULT": "0.5rem", "lg": "1rem", "xl": "1.5rem", "full": "9999px"},
+                },
+            },
+        }
+    </script>
+<style>
+        /* Custom scrollbar for dark mode */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #161c1b; 
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #434c4a; 
+            border-radius: 4px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #d4af37; 
+        }
+    </style>
+</head>
+<body class="bg-background-light dark:bg-background-dark text-slate-900 dark:text-slate-100 font-display min-h-screen flex flex-col">
+<!-- Top Navigation -->
+<div class="relative flex w-full flex-col bg-surface-darker border-b border-border-color">
+<header class="flex items-center justify-between whitespace-nowrap px-10 py-4 max-w-[1440px] mx-auto w-full">
+<div class="flex items-center gap-4 text-white">
+<div class="size-8 text-primary">
+<svg fill="currentColor" viewbox="0 0 48 48" xmlns="http://www.w3.org/2000/svg">
+<path clip-rule="evenodd" d="M24 18.4228L42 11.475V34.3663C42 34.7796 41.7457 35.1504 41.3601 35.2992L24 42V18.4228Z" fill="currentColor" fill-rule="evenodd"></path>
+<path clip-rule="evenodd" d="M24 8.18819L33.4123 11.574L24 15.2071L14.5877 11.574L24 8.18819ZM9 15.8487L21 20.4805V37.6263L9 32.9945V15.8487ZM27 37.6263V20.4805L39 15.8487V32.9945L27 37.6263ZM25.354 2.29885C24.4788 1.98402 23.5212 1.98402 22.646 2.29885L4.98454 8.65208C3.7939 9.08038 3 10.2097 3 11.475V34.3663C3 36.0196 4.01719 37.5026 5.55962 38.098L22.9197 44.7987C23.6149 45.0671 24.3851 45.0671 25.0803 44.7987L42.4404 38.098C43.9828 37.5026 45 36.0196 45 34.3663V11.475C45 10.2097 44.2061 9.08038 43.0155 8.65208L25.354 2.29885Z" fill="currentColor" fill-rule="evenodd"></path>
+</svg>
+</div>
+<h2 class="text-white text-lg font-bold leading-tight tracking-[-0.015em]">Barwon Craft Works</h2>
+</div>
+<div class="hidden lg:flex flex-1 justify-end gap-8">
+<nav class="flex items-center gap-9">
+<a class="text-slate-300 hover:text-primary transition-colors text-sm font-medium leading-normal" href="#">Shop</a>
+<a class="text-primary text-sm font-medium leading-normal" href="#">3D Print Service</a>
+<a class="text-slate-300 hover:text-primary transition-colors text-sm font-medium leading-normal" href="#">Custom Pens</a>
+<a class="text-slate-300 hover:text-primary transition-colors text-sm font-medium leading-normal" href="#">About</a>
+<a class="text-slate-300 hover:text-primary transition-colors text-sm font-medium leading-normal" href="#">Contact</a>
+</nav>
+<div class="flex gap-3">
+<button class="flex size-10 cursor-pointer items-center justify-center rounded-xl bg-surface-dark text-white hover:bg-border-color transition-colors">
+<span class="material-symbols-outlined text-[20px]">search</span>
+</button>
+<button class="flex size-10 cursor-pointer items-center justify-center rounded-xl bg-surface-dark text-white hover:bg-border-color transition-colors">
+<span class="material-symbols-outlined text-[20px]">shopping_bag</span>
+</button>
+</div>
+</div>
+<!-- Mobile Menu Toggle -->
+<button class="lg:hidden flex items-center justify-center text-white">
+<span class="material-symbols-outlined">menu</span>
+</button>
+</header>
+</div>
+<!-- Main Content Area -->
+<main class="flex-1 flex justify-center w-full">
+<div class="w-full max-w-[1200px] flex flex-col px-4 md:px-10 py-6 md:py-10 gap-8">
+<!-- Cinematic Header -->
+<div class="rounded-xl overflow-hidden relative min-h-[400px] flex items-center justify-center group">
+<div class="absolute inset-0 bg-cover bg-center transition-transform duration-700 group-hover:scale-105" data-alt="Dark moody workshop with 3d printer" style='background-image: linear-gradient(rgba(19, 22, 21, 0.4) 0%, rgba(19, 22, 21, 0.9) 100%), url("https://lh3.googleusercontent.com/aida-public/AB6AXuCFMnxNjrb3WXO7eBt5dSiVOdHX0ixQMAf3ENUwRGHmoceeeF0qEADwaZ464gdTtlPt8OCXXTXyjmU92p5vYBqOFF2Z55JvI8tVxvimpGhtIVdvkqpjUEDHON7TOWXWGvGxNnaPZoSUNfMqPAwklCEEkrRnqW3xPtkQUxtQmAlpmqWzOnlzUWAfBiVYcSGMG8c5HjQmLSbLL8OFE0G78sLiJypyTwBWDqpcKXFGC__NHm4Hrucvj73FqReayqTvlVVT1Wzn6EBor4Tm");'>
+</div>
+<div class="relative z-10 flex flex-col items-center text-center max-w-2xl px-6 gap-6">
+<div class="inline-flex items-center justify-center px-3 py-1 rounded-full bg-primary/20 border border-primary/30 backdrop-blur-sm">
+<span class="text-primary text-xs font-bold uppercase tracking-wider">Professional Grade</span>
+</div>
+<h1 class="text-white text-4xl md:text-6xl font-black leading-tight tracking-tight">
+                        Precision 3D Printing
+                    </h1>
+<p class="text-slate-200 text-lg md:text-xl font-light leading-relaxed max-w-lg mx-auto">
+                        Transform digital concepts into tangible luxury. Our artisan-grade service combines high-resolution printing with hand-finished detailing.
+                    </p>
+<div class="flex gap-4 mt-2">
+<button class="h-12 px-8 rounded-xl bg-primary text-background-dark text-base font-bold hover:bg-white hover:text-black transition-all shadow-[0_0_20px_rgba(212,175,55,0.3)]">
+                            Start Project
+                        </button>
+</div>
+</div>
+</div>
+<!-- Service Interface Container -->
+<div class="bg-surface-dark border border-border-color rounded-xl overflow-hidden shadow-2xl">
+<!-- Tabs -->
+<div class="flex border-b border-border-color">
+<button class="flex-1 py-4 text-center relative group">
+<span class="text-primary font-bold text-sm md:text-base tracking-wide">Instant Estimate</span>
+<div class="absolute bottom-0 left-0 w-full h-[3px] bg-primary shadow-[0_-2px_10px_rgba(212,175,55,0.5)]"></div>
+</button>
+<button class="flex-1 py-4 text-center relative group hover:bg-surface-darker/50 transition-colors">
+<span class="text-text-muted group-hover:text-slate-300 font-bold text-sm md:text-base tracking-wide">Request Custom Quote</span>
+<div class="absolute bottom-0 left-0 w-full h-[3px] bg-transparent group-hover:bg-border-color transition-colors"></div>
+</button>
+</div>
+<div class="p-6 md:p-10 grid lg:grid-cols-2 gap-10">
+<!-- Left Column: Upload Area -->
+<div class="flex flex-col gap-6">
+<div class="flex flex-col items-center justify-center gap-6 rounded-xl border-2 border-dashed border-primary/40 bg-surface-darker/50 px-6 py-16 hover:border-primary/70 hover:bg-surface-darker transition-all cursor-pointer group">
+<div class="size-16 rounded-full bg-primary/10 flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
+<span class="material-symbols-outlined text-primary text-4xl">cloud_upload</span>
+</div>
+<div class="flex flex-col items-center gap-2 text-center">
+<p class="text-white text-xl font-bold">Upload STL Files</p>
+<p class="text-text-muted text-sm max-w-[300px]">
+                                    Drag and drop your 3D models here or click to browse. <br/>Supported formats: .STL, .OBJ, .STEP
+                                </p>
+</div>
+<button class="h-10 px-6 rounded-lg bg-surface-dark border border-border-color text-white text-sm font-bold hover:bg-border-color transition-colors">
+                                Browse Files
+                            </button>
+</div>
+<!-- File List Placeholder (Empty state hidden or shown) -->
+<div class="bg-surface-darker rounded-lg p-4 border border-border-color flex items-center gap-4">
+<div class="size-10 bg-surface-dark rounded flex items-center justify-center text-text-muted">
+<span class="material-symbols-outlined">description</span>
+</div>
+<div class="flex-1 min-w-0">
+<p class="text-sm font-medium text-slate-300 truncate">No file selected</p>
+<p class="text-xs text-text-muted">Upload a file to see details</p>
+</div>
+</div>
+</div>
+<!-- Right Column: Configuration Form -->
+<div class="flex flex-col gap-8">
+<div>
+<h3 class="text-white text-xl font-bold mb-1">Configuration</h3>
+<p class="text-text-muted text-sm">Select your printing preferences below.</p>
+</div>
+<div class="space-y-6">
+<!-- Material Selection -->
+<div class="space-y-3">
+<label class="text-slate-200 text-sm font-bold uppercase tracking-wider flex items-center gap-2">
+<span class="material-symbols-outlined text-primary text-lg">layers</span>
+                                    Material
+                                </label>
+<div class="grid grid-cols-2 gap-3">
+<button class="flex flex-col gap-1 p-3 rounded-lg border border-primary bg-primary/10 text-left transition-all">
+<span class="text-primary font-bold text-sm">PLA Pro</span>
+<span class="text-xs text-slate-400">Standard, Biodegradable</span>
+</button>
+<button class="flex flex-col gap-1 p-3 rounded-lg border border-border-color bg-surface-darker text-left hover:border-slate-500 transition-all">
+<span class="text-slate-200 font-bold text-sm">PETG</span>
+<span class="text-xs text-text-muted">Durable, Heat Resistant</span>
+</button>
+<button class="flex flex-col gap-1 p-3 rounded-lg border border-border-color bg-surface-darker text-left hover:border-slate-500 transition-all">
+<span class="text-slate-200 font-bold text-sm">ABS</span>
+<span class="text-xs text-text-muted">High Strength, Sandable</span>
+</button>
+<button class="flex flex-col gap-1 p-3 rounded-lg border border-border-color bg-surface-darker text-left hover:border-slate-500 transition-all">
+<span class="text-slate-200 font-bold text-sm">Resin</span>
+<span class="text-xs text-text-muted">Ultra High Detail</span>
+</button>
+</div>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+<!-- Infill -->
+<label class="flex flex-col gap-2">
+<span class="text-slate-200 text-sm font-bold uppercase tracking-wider flex items-center gap-2">
+<span class="material-symbols-outlined text-primary text-lg">grid_on</span>
+                                        Infill Density
+                                    </span>
+<div class="relative">
+<select class="w-full h-12 rounded-lg bg-surface-darker border border-border-color text-slate-200 px-4 pr-10 focus:border-primary focus:ring-1 focus:ring-primary appearance-none cursor-pointer">
+<option>20% (Standard)</option>
+<option>15% (Light)</option>
+<option>40% (Strong)</option>
+<option>100% (Solid)</option>
+</select>
+<span class="material-symbols-outlined absolute right-3 top-1/2 -translate-y-1/2 text-text-muted pointer-events-none">expand_more</span>
+</div>
+</label>
+<!-- Layer Height -->
+<label class="flex flex-col gap-2">
+<span class="text-slate-200 text-sm font-bold uppercase tracking-wider flex items-center gap-2">
+<span class="material-symbols-outlined text-primary text-lg">reorder</span>
+                                        Quality
+                                    </span>
+<div class="relative">
+<select class="w-full h-12 rounded-lg bg-surface-darker border border-border-color text-slate-200 px-4 pr-10 focus:border-primary focus:ring-1 focus:ring-primary appearance-none cursor-pointer">
+<option>0.2mm (Standard)</option>
+<option>0.1mm (Fine)</option>
+<option>0.3mm (Draft)</option>
+</select>
+<span class="material-symbols-outlined absolute right-3 top-1/2 -translate-y-1/2 text-text-muted pointer-events-none">expand_more</span>
+</div>
+</label>
+</div>
+<!-- Color Selection -->
+<label class="flex flex-col gap-3 pt-2">
+<span class="text-slate-200 text-sm font-bold uppercase tracking-wider flex items-center gap-2">
+<span class="material-symbols-outlined text-primary text-lg">palette</span>
+                                    Color
+                                </span>
+<div class="flex flex-wrap gap-3">
+<button class="size-8 rounded-full bg-white border-2 border-primary ring-2 ring-primary/30 ring-offset-2 ring-offset-surface-dark" title="White"></button>
+<button class="size-8 rounded-full bg-black border border-border-color hover:scale-110 transition-transform" title="Black"></button>
+<button class="size-8 rounded-full bg-gray-500 border border-border-color hover:scale-110 transition-transform" title="Grey"></button>
+<button class="size-8 rounded-full bg-blue-600 border border-border-color hover:scale-110 transition-transform" title="Blue"></button>
+<button class="size-8 rounded-full bg-red-600 border border-border-color hover:scale-110 transition-transform" title="Red"></button>
+<button class="size-8 rounded-full bg-yellow-500 border border-border-color hover:scale-110 transition-transform" title="Gold"></button>
+<button class="size-8 rounded-full border border-dashed border-text-muted flex items-center justify-center text-text-muted hover:border-primary hover:text-primary transition-colors">
+<span class="material-symbols-outlined text-sm">add</span>
+</button>
+</div>
+</label>
+</div>
+</div>
+</div>
+<!-- Footer / Action Bar -->
+<div class="bg-surface-darker p-6 md:px-10 border-t border-border-color flex flex-col md:flex-row items-center justify-between gap-6">
+<div class="flex flex-col gap-1">
+<span class="text-text-muted text-sm">Estimated Cost</span>
+<div class="flex items-baseline gap-2">
+<span class="text-3xl font-black text-white">$0.00</span>
+<span class="text-sm text-text-muted font-normal">AUD</span>
+</div>
+</div>
+<div class="flex gap-4 w-full md:w-auto">
+<button class="flex-1 md:flex-none h-12 px-6 rounded-xl border border-border-color text-white font-bold hover:bg-border-color transition-colors">
+                            Save Draft
+                        </button>
+<button class="flex-1 md:flex-none h-12 px-8 rounded-xl bg-primary text-background-dark font-bold hover:bg-white transition-colors shadow-lg shadow-primary/20">
+                            Add to Cart
+                        </button>
+</div>
+</div>
+</div>
+<!-- Features Section -->
+<div class="grid grid-cols-1 md:grid-cols-3 gap-6 py-6">
+<div class="flex items-start gap-4 p-4 rounded-xl hover:bg-surface-dark transition-colors">
+<div class="size-12 rounded-full bg-surface-darker flex items-center justify-center border border-border-color shrink-0">
+<span class="material-symbols-outlined text-primary">verified</span>
+</div>
+<div>
+<h4 class="text-white font-bold mb-1">Quality Guarantee</h4>
+<p class="text-text-muted text-sm leading-relaxed">Every print is inspected by hand for imperfections before shipping.</p>
+</div>
+</div>
+<div class="flex items-start gap-4 p-4 rounded-xl hover:bg-surface-dark transition-colors">
+<div class="size-12 rounded-full bg-surface-darker flex items-center justify-center border border-border-color shrink-0">
+<span class="material-symbols-outlined text-primary">bolt</span>
+</div>
+<div>
+<h4 class="text-white font-bold mb-1">Fast Turnaround</h4>
+<p class="text-text-muted text-sm leading-relaxed">Most orders ship within 48 hours. Priority processing available.</p>
+</div>
+</div>
+<div class="flex items-start gap-4 p-4 rounded-xl hover:bg-surface-dark transition-colors">
+<div class="size-12 rounded-full bg-surface-darker flex items-center justify-center border border-border-color shrink-0">
+<span class="material-symbols-outlined text-primary">support_agent</span>
+</div>
+<div>
+<h4 class="text-white font-bold mb-1">Expert Support</h4>
+<p class="text-text-muted text-sm leading-relaxed">Need help with your model? Our artisans can assist with optimization.</p>
+</div>
+</div>
+</div>
+</div>
+</main>
+<footer class="bg-surface-darker border-t border-border-color py-8 mt-auto">
+<div class="max-w-[1440px] mx-auto px-10 text-center text-text-muted text-sm">
+            © 2023 Barwon Craft Works. Luxury Handmade Goods.
+        </div>
+</footer>
+</body></html>
