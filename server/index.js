@@ -21,7 +21,16 @@ app.use('/api/webhooks/stripe', express.raw({ type: 'application/json' }));
 
 // Middleware
 app.use(cors({
-    origin: [process.env.FRONTEND_URL || 'http://localhost:3001', 'http://localhost:3001'],
+    origin: function(origin, callback) {
+        const allowed = [
+            process.env.FRONTEND_URL,
+            'http://localhost:3001',
+            'http://localhost:3000',
+            'https://barwon-craftworks.vercel.app'
+        ].filter(Boolean);
+        if (!origin || allowed.includes(origin)) callback(null, true);
+        else callback(null, true); // Allow all for now during development
+    },
     credentials: true
 }));
 app.use(express.json());
