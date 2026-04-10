@@ -93,3 +93,12 @@ body.dark {
   background-color: #131615;
   border-color: #2e3332;
 }
+
+/* Slide-in animation for admin panel */
+@keyframes slide-in-right {
+  from { transform: translateX(100%); }
+  to { transform: translateX(0); }
+}
+.animate-slide-in-right {
+  animation: slide-in-right 0.3s ease-out;
+}

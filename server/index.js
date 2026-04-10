@@ -9,6 +9,7 @@ import checkoutRouter from './routes/checkout.js';
 import webhooksRouter from './routes/webhooks.js';
 import contactRouter from './routes/contact.js';
 import adminRouter from './routes/admin.js';
+import uploadRouter from './routes/upload.js';
 
 dotenv.config();
 
@@ -33,6 +34,7 @@ app.use('/api/checkout', checkoutRouter);
 app.use('/api/webhooks', webhooksRouter);
 app.use('/api/contact', contactRouter);
 app.use('/api/admin', adminRouter);
+app.use('/api/upload', uploadRouter);
 
 // Health check
 app.get('/api/health', (req, res) => {
